@@ -1,0 +1,36 @@
+// popover color variations //
+@mixin popover-variant($color) {
+	border-color: $color;
+	.popover-header {
+		background: $popover-bg;
+		color: $color;
+	}
+	&.bs-popover-top{
+		.arrow{
+			&:before{
+				border-top-color: $color !important;
+			}
+		}
+	}
+	&.bs-popover-right{
+		.arrow{
+			&:before{
+				border-right-color: $color !important;
+			}
+		}
+	}
+	&.bs-popover-bottom{
+		.arrow{
+			&:before{
+				border-bottom-color: $color !important;
+			}
+		}
+	}
+	&.bs-popover-left{
+		.arrow{
+			&:before{
+				border-left-color: $color !important;
+			}
+		}
+	}
+}

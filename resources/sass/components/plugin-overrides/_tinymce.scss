@@ -1,0 +1,14 @@
+/* TinyMCE Editor */
+
+.mce-tinymce {
+  &.mce-panel,
+  .mce-panel {
+    border-color: $border-color;
+  }
+  .mce-edit-area {
+    background: $input-bg;
+  }
+  body {
+    background: $input-bg;
+  }
+}

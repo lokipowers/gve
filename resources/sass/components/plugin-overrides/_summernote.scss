@@ -1,0 +1,19 @@
+/* Summernote Editor */
+
+.note-editor{
+  &.note-frame {
+    border: 1px solid $border-color;
+    .note-editing-area {
+      .note-editable {
+        background: $input-bg;
+        color: $input-color;
+      }
+    }
+    .note-statusbar {
+      background: $border-color; 
+    }
+  }
+}
+.note-popover {
+  border: 1px solid $border-color;
+}

@@ -1,0 +1,21 @@
+/* Bootstrap Tour */
+
+.tour-tour {
+  padding: 0;
+  border: 0;
+  font-family: $type1-regular;
+  .popover-title {
+    background: theme-color(primary);
+    border: 0;
+    color: $white;
+    font-size: .8125rem;
+    font-family: $type1-semibold;
+    padding: .75rem;
+  }
+}
+.tour-step-background {
+  display: none;
+}
+.tour-backdrop {
+  background: lighten($black, 10%);
+}

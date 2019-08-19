@@ -1,0 +1,75 @@
+/* Js-grid */
+
+.jsgrid {
+	.jsgrid-grid-header {
+		border: none;
+		border-top: 0;
+	}
+	.jsgrid-grid-body{
+		border-color: $border-color;
+	}
+	.jsgrid-table {
+		@extend .table;
+		border-color: $border-color;
+		th,td {
+			font-weight: initial;
+			font-family: $type1-semibold;
+			@extend .bg-dark;
+			border-color: $border-color;
+		}
+		tr.jsgrid-row,.jsgrid-alt-row{
+			td,th{
+				@extend .bg-dark;
+				&.jsgrid-cell{
+					border-color: $border-color;
+				}
+			}
+		}
+		.jsgrid-filter-row {
+			input[type=text],
+			select {
+				@extend .form-control;
+			}
+			input[type=number] {
+				@extend .form-control;
+				padding: .56rem 0;
+			}
+			th,td{
+				@extend .bg-dark;
+				border-color: $border-color;
+			}
+		}
+	}
+	.jsgrid-header-sort {
+		&:before {
+			margin-top: 10px;
+			float: right;
+		}
+	}
+	.jsgrid-header-sort-asc {
+		&:before {
+			border-color: transparent transparent $body-color;
+		}
+	}
+	.jsgrid-header-sort-desc {
+		&:before {
+			border-color: $body-color transparent transparent
+		}
+	}
+	.jsgrid-pager {
+		line-height: 2;
+		@extend .pagination;
+		.jsgrid-pager-nav-button,
+		.jsgrid-pager-page {
+			@extend .page-item;
+			a {
+				@extend .page-link;
+			}
+		}
+	}
+	.jsgrid-pager-current-page {
+		padding: 0.5rem 0.75rem;
+		font-weight: initial;
+		line-height: 1.25;
+	}
+}

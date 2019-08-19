@@ -1,0 +1,15 @@
+/* C3 Charts */
+
+.c3-legend-item,.c3-chart-arcs-title {
+   fill: $text-muted;
+}
+
+.c3-xgrid-line line {
+    stroke: blue;
+}
+.c3-axis{
+  fill: $text-muted;
+}
+.c3 line, .c3 path{
+  stroke: $content-bg;
+}

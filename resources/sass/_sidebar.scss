@@ -1,0 +1,262 @@
+/* Sidebar */
+
+.sidebar {
+  background: $sidebar-dark-bg;
+  font-family: $type1-regular;
+  min-height: 100%;
+  padding: 0;
+  width: $sidebar-width-lg;
+  z-index: 999;
+  transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
+  -webkit-transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
+  -moz-transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
+  -ms-transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
+
+  .nav {
+    overflow: hidden;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    .menu-items {
+      &:nth-child(5n+1) {
+        .nav-link {
+          .menu-icon {
+            i {
+              color: theme-color(primary);
+            }
+          }
+        }
+      }
+
+      &:nth-child(5n+2) {
+        .nav-link {
+          .menu-icon {
+            i {
+              color: theme-color(success);
+            }
+          }
+        }
+      }
+
+      &:nth-child(5n+3) {
+        .nav-link {
+          .menu-icon {
+            i {
+              color: theme-color(info);
+            }
+          }
+        }
+      }
+
+      &:nth-child(5n+4) {
+        .nav-link {
+          .menu-icon {
+            i {
+              color: theme-color(warning);
+            }
+          }
+        }
+      }
+
+      &:nth-child(5n+5) {
+        .nav-link {
+          .menu-icon {
+            i {
+              color: theme-color(danger);
+            }
+          }
+        }
+      }
+    }
+
+    .nav-item {
+      .collapse {
+        z-index: 999;
+      }
+
+      .nav-link {
+        align-items: center;
+        display: flex;
+        padding: $sidebar-menu-padding;
+        white-space: nowrap;
+        height: $nav-link-height;
+        color: $sidebar-dark-menu-color;
+
+        .menu-icon {
+          margin-right: 1.25rem;
+          font-size: $sidebar-icon-font-size;
+          line-height: 1;
+          background: #0d0d0d;
+          width: 31px;
+          height: 31px;
+          @include border-radius(100%);
+          @include display-flex;
+          @include align-items(center);
+          @include justify-content(center);
+
+          i {
+            font-size: $default-font-size;
+          }
+        }
+
+        i {
+          color: inherit;
+
+          &.menu-arrow {
+            margin-left: auto;
+            margin-right: 0;
+
+            &:before {
+              font: normal normal normal 24px/1 "Material Design Icons";
+              font-size: inherit;
+              text-rendering: auto;
+              line-height: inherit;
+              content: "\f140";
+            }
+          }
+        }
+
+        .menu-title {
+          color: inherit;
+          display: inline-block;
+          font-size: $sidebar-menu-font-size;
+          line-height: 1;
+          vertical-align: middle;
+        }
+
+        .badge {
+          margin-left: auto;
+        }
+
+        &:hover {
+          color: lighten($sidebar-dark-menu-color, 5%);
+        }
+      }
+
+      &.nav-category {
+        line-height: 1;
+        padding: $sidebar-category-padding;
+
+        .nav-link {
+          color: $sidebar-dark-category-color;
+          font-family: $type1-semibold;
+          font-size: $sidebar-category-font-size;
+          height: auto;
+          padding-left: 0;
+
+
+          &:hover {
+            color: $sidebar-dark-category-color;
+          }
+        }
+      }
+
+      &.active {
+        >.nav-link {
+          background: $sidebar-dark-menu-active-bg;
+          color: $sidebar-dark-menu-active-color;
+
+          .menu-title,
+          i {
+            color: inherit;
+          }
+        }
+      }
+
+      &.account-dropdown {
+        .nav-link {
+          padding: $account-dropdown-padding;
+
+          .menu-arrow {
+            color: $white;
+          }
+        }
+
+        .collapse {
+          .sub-menu {
+            padding-left: 0;
+
+            .nav-item {
+              .nav-link {
+                padding-left: $account-dropdown-padding;
+
+                .menu-icon {
+                  i {
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:not(.sub-menu) {
+      >.nav-item {
+        &:hover {
+          &:not(.nav-category):not(.account-dropdown) {
+            >.nav-link {
+              background: $sidebar-dark-menu-hover-bg;
+              color: $sidebar-dark-menu-hover-color;
+            }
+          }
+        }
+      }
+    }
+
+    &.sub-menu {
+      margin-bottom: 0;
+      padding: $sidebar-submenu-padding;
+
+      .nav-item {
+        .nav-link {
+          color: $sidebar-dark-submenu-color;
+          padding: $sidebar-submenu-item-padding;
+          font-size: $sidebar-submenu-font-size;
+          line-height: 1;
+          height: auto;
+          position: relative;
+
+          &.active {
+            color: $sidebar-dark-menu-active-color;
+            background: transparent;
+
+            &:before {
+              background: $sidebar-dark-menu-active-color;
+            }
+          }
+        }
+
+        &:hover {
+          >.nav-link {
+            background: $sidebar-dark-submenu-hover-bg;
+            color: $sidebar-dark-submenu-hover-color;
+
+            &:before {
+              background: $sidebar-dark-submenu-hover-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .sidebar-offcanvas {
+    position: fixed;
+    max-height: calc(100vh - #{$navbar-height});
+    top: $navbar-height;
+    bottom: 0;
+    overflow: auto;
+    right: -$sidebar-width-lg;
+    -webkit-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+
+    &.active {
+      right: 0;
+    }
+  }
+}

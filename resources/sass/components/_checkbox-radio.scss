@@ -1,0 +1,302 @@
+/* Checkboxes and Radios */
+
+.form-check,
+.form-radio {
+  position: relative;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  min-height: 18px;
+
+  .form-check-label {
+    display: block;
+    padding-left: 30px;
+    .rtl & {
+      padding-left: 0;
+      padding-right: 30px;
+    }
+    line-height: 1.5;
+
+    input {
+      position: absolute;
+      margin-left: -20px;
+      margin-top: 4px\9;
+      top: 0;
+      left: 0;
+      margin-left: 0 !important;
+      z-index: 1;
+      cursor: pointer;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      margin-top: 0;
+      .rtl & {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+.form-check {
+  label {
+    font-size: $default-font-size;
+    line-height: 1.5;
+
+    input {
+      &:checked {
+        +.input-helper {
+          &:after {
+            opacity: 1;
+            line-height: 18px;
+            filter: alpha(opacity=100);
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+          }
+        }
+      }
+
+      &:disabled {
+        + .input-helper {
+          &:before {
+            border-color: $border-color;
+          }
+        }
+
+        &:checked {
+          + .input-helper {
+            &:after {
+              color: $border-color;
+            }
+          }
+        }
+      }
+    }
+
+    .input-helper {
+      &:before {
+        position: absolute;
+        content: "";
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        border-radius: 2px;
+        left: 0;
+        border: 2px solid $white;
+        -webkit-transition: all;
+        -o-transition: all;
+        transition: all;
+        transition-duration: 0s;
+        -webkit-transition-duration: 250ms;
+        transition-duration: 250ms;
+        .rtl & {
+          left: auto;
+          right: 0;
+        }
+      }
+
+      &:after {
+        -webkit-transition: all;
+        -o-transition: all;
+        transition: all;
+        transition-duration: 0s;
+        -webkit-transition-duration: 250ms;
+        transition-duration: 250ms;
+        font-family: Material Design Icons;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+        content: '\F12C';
+        position: absolute;
+        font-size: 0.9375rem;
+        left: 0;
+        top: 2px;
+        color: theme-color(success);
+        font-weight: bold;
+        .rtl & {
+          left: auto;
+          right: 2px;
+        }
+      }
+    }
+  }
+
+  &.form-check-flat {
+    label {
+      input {
+        &:checked {
+          +.input-helper {
+            &:before {
+              background-color: theme-color(primary);
+              border: none;
+            }
+          }
+        }
+
+        &:disabled {
+          + .input-helper {
+            &:after {
+              color: color(white);
+            }
+
+            &:before {
+              border-color: $border-color;
+            }
+          }
+
+          &:checked {
+            + .input-helper {
+              &:before {
+                background: color(gray-lightest);
+              }
+            }
+          }
+        }
+      }
+
+      .input-helper {
+        &:before {
+          border: 2px solid theme-color(primary);
+        }
+
+        &:after {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.form-radio {
+  label {
+    input {
+      +.input-helper {
+        &:before {
+          position: absolute;
+          content: "";
+          top: 2px;
+          left: 0;
+          border: 2px solid $white;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          -webkit-transition: all;
+          -o-transition: all;
+          transition: all;
+          transition-duration: 0s;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+          .rtl & {
+            left: auto;
+            right: 0;
+          }
+        }
+
+        &:after {
+          content: "";
+          width: 8px;
+          height: 8px;
+          background: theme-color(success);
+          border-radius: 50%;
+          top: 8px;
+          left: 6px;
+          -webkit-transition: all;
+          -o-transition: all;
+          transition: all;
+          transition-duration: 0s;
+          -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+          opacity: 0;
+          filter: alpha(opacity=0);
+          -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+          -o-transform: scale(0);
+          transform: scale(0);
+          position: absolute;
+          .rtl & {
+            left: auto;
+            right: 6px;
+          }
+        }
+      }
+
+      &:checked {
+        +.input-helper {
+          &:before {
+            border: 2px solid $white;
+          }
+
+          &:after {
+            opacity: 1;
+            line-height: 1.5;
+            filter: alpha(opacity=100);
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+          }
+        }
+      }
+
+      &:disabled {
+        + .input-helper {
+          &:before {
+            border-color: $border-color;
+          }
+        }
+
+        &:checked {
+          + .input-helper {
+            &:before {
+              border-color: $border-color;
+            }
+
+            &:after {
+              background-color: $border-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.form-radio-flat {
+    label {
+      input {
+        + .input-helper {
+          &:before {
+            border-color: theme-color(primary);
+          }
+        }
+        &:checked {
+          +.input-helper {
+            &:before {
+              background: theme-color(primary);
+              border-color: theme-color(primary);
+            }
+
+            &:after {
+              width: 20px;
+              height: 20px;
+              top: 2px;
+              left: -2px;
+              color: $black;
+              background: none;
+              content: '\F12C';
+              font-family: Material Design Icons;
+              text-align: center;
+              .rtl & {
+                left: auto;
+                right: -2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

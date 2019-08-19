@@ -1,0 +1,46 @@
+/* Colorpicker */
+
+.asColorPicker-dropdown {
+  max-width: initial;
+  @extend .bg-dark;
+  border: none;
+}
+.asColorPicker-trigger{
+    height: auto;
+    @extend .input-group-addon;
+    @extend .bg-dark;
+    border: none;
+    span {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+}
+
+.asColorPicker-input {
+  @extend .form-control;
+}
+
+.asColorPicker-wrap {
+  @extend .input-group;
+}
+.popover.bottom{
+  .arrow{
+    &::after{
+      border-bottom-color: $content-bg;
+    }
+  }
+}
+.clockpicker-popover {
+  border: none;
+  .popover-title{
+    background: $content-bg;
+    border-bottom-color: $border-color;
+  }
+  .popover-content{
+    background: $content-bg;
+  }
+  .clockpicker-button{
+    @extend .btn-dark;
+  }
+}

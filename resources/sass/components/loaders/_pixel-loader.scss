@@ -1,0 +1,41 @@
+/* Progress loader */
+
+.progress-loader-wrapper {
+  width: 170px;
+  margin: auto;
+}
+.progress-loader {
+    position:relative;
+    width: 0;
+    height: 14px;
+    background: theme-color(warning);
+    border-radius: .8em;
+    animation: roll 5s linear infinite;
+    box-shadow: 
+      inset 0 10px 10px rgba(255,255,255,0.2), 
+      inset 0 1px 0 rgba(255,255,255,0.3), 
+      inset 0 -5px 3px rgba(0,0,0,0.2),
+      0 3px 2px rgba(0,0,0,0.3);
+      &:after {
+        width: 170px;
+       height: 28px;
+       border: 1px solid rgba(0,0,0,0.8);
+       background: rgba($white, .1);
+       border-radius: 1em;
+       display: block;
+       content: "";
+       position: absolute;
+       left: -5px;
+       top: -7px;
+     }
+}
+
+@-moz-keyframes roll {
+  0% { width:0; }
+  100% { width:150px; }
+}
+
+@-webkit-keyframes roll {
+  0% { width:0; }
+  100% { width:150px; }
+}
