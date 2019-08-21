@@ -55,11 +55,8 @@
     + Todo List
     + Timeline
     + Tooltips
-<<<<<<< HEAD
     + UserController Profile
-=======
     + User Profile
->>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
     + Google Maps
   * Email
     + Mail Sidebar
@@ -15165,11 +15162,7 @@ dl li {
 .tooltip-dark.bs-tooltip-left .arrow::before, .tooltip-dark.bs-tooltip-auto[x-placement^="left"] .arrow::before {
     border-left-color: #0d0d0d; }
 
-<<<<<<< HEAD
-/* UserController Profile */
-=======
 /* User Profile */
->>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
 .user-profile .side-left .card .avatar img {
     display: block;
     width: 90px;

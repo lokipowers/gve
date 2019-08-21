@@ -15,7 +15,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-<<<<<<< HEAD
     <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="/vendors/css/vendor.bundle.addons.css">
@@ -52,7 +51,6 @@
 <script src="/js/todolist.js"></script>
 
 <script src="/js/dashboard.js"></script>
-=======
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -115,5 +113,4 @@
         </main>
     </div>
 </body>
->>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
 </html>

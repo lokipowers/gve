@@ -64,12 +64,6 @@
         </style>
     </head>
     <body>
-<<<<<<< HEAD
-=======
-        <div id="app">
-            <example-component></example-component>
-        </div>
->>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
