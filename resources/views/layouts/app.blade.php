@@ -15,6 +15,44 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.addons.css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <script>
+        window.user = {!! json_encode(\Auth::user()) !!};
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="container-scroller">
+            <navbar></navbar>
+            <div class="container-fluid page-body-wrapper">
+                <sidebar></sidebar>
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        @yield('content')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/vendors/js/vendor.bundle.base.js"></script>
+<script src="/vendors/js/vendor.bundle.addons.js"></script>
+
+<script src="/js/off-canvas.js"></script>
+<script src="/js/hoverable-collapse.js"></script>
+<script src="/js/misc.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/todolist.js"></script>
+
+<script src="/js/dashboard.js"></script>
+=======
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -77,4 +115,5 @@
         </main>
     </div>
 </body>
+>>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
 </html>

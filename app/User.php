@@ -16,7 +16,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+<<<<<<< HEAD
+        'name',
+        'email',
+        'password',
+        'username',
+        'last_login_at',
+        'last_login_ip',
+=======
         'name', 'email', 'password',
+>>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
     ];
 
     /**
@@ -36,4 +45,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
+
+    public function character()
+    {
+        return $this->hasOne('App\Character');
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany('App\Notification');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Message', 'sender_user_id');
+    }
+
+=======
+>>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
 }

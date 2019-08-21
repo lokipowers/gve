@@ -50,7 +50,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
+    | UserController Providers
+=======
     | User Providers
+>>>>>>> 83a6d5e77d80b4399a83c30329420fa2b104e5be
     |--------------------------------------------------------------------------
     |
     | All authentication drivers have a user provider. This defines how the
