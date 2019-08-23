@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="LokiPowers">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Gve">
     <serverData>
+      <paths name="Gve">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/dev.gve.world" local="$PROJECT_DIR$" web="https://dev.gve.world" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="LokiPowers">
         <serverdata>
           <mappings>

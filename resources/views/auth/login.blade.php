@@ -1,92 +1,91 @@
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('Material Dashboard')])
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="/vendors/css/vendor.bundle.addons.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="../../images/favicon.png" />
-</head>
-<body>
-<div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="row w-100">
-            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
-                <div class="card col-lg-4 mx-auto">
-                    <div class="card-body px-5 py-5">
-                        <h3 class="card-title text-left mb-3">{{ __('Login') }}</h3>
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <div class="form-group @error('email') has-danger @enderror">
-                                <label>{{ __('Username or Email Address') }} *</label>
-                                <input id="email" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus class="form-control p_input @error('email') form-control-danger @enderror">
-                                @error('email')
-                                    <label id="email-error" class="error mt-2 text-danger" for="email">{{ $message }}</label>
-                                @enderror
-                            </div>
-                            <div class="form-group @error('password') has-danger @enderror">
-                                <label>{{ __('Password') }} *</label>
-                                <input id="password" type="password" class="form-control p_input @error('password') form-control-danger @enderror" name="password" required autocomplete="current-password">
-                                @error('password')
-                                <label id="password-error" class="error mt-2 text-danger" for="password">{{ $message }}</label>
-                                @enderror
-                            </div>
-                            <div class="form-group d-flex align-items-center justify-content-between">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" name="remember" class="form-check-input" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }} </label>
-                                </div>
-                                @if (Route::has('password.request'))
-                                    <a href="{{ route('password.request') }}" class="forgot-pass">{{ __('Forgot Your Password?') }}</a>
-                                @endif
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-block enter-btn">{{ __('Login') }}</button>
-                            </div>
-                            <div class="d-flex">
-                                <button class="btn btn-facebook mr-2 col">
-                                    <i class="mdi mdi-facebook"></i> Facebook </button>
-                                <button class="btn btn-google col">
-                                    <i class="mdi mdi-google-plus"></i> Google plus </button>
-                            </div>
-                            <p class="sign-up">Don't have an Account?<a href="{{ route('register') }}"> Sign Up</a></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- content-wrapper ends -->
-        </div>
-        <!-- row ends -->
+@section('content')
+<div class="container" style="height: auto;">
+  <div class="row align-items-center">
+    <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
+      <h3>{{ __('Log in to see how you can speed up your web development with out of the box CRUD for #User Management and more.') }} </h3>
     </div>
-    <!-- page-body-wrapper ends -->
+    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+      <form class="form" method="POST" action="{{ route('login') }}">
+        @csrf
+
+        <div class="card card-login card-hidden mb-3">
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title"><strong>{{ __('Login') }}</strong></h4>
+            <div class="social-line">
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-description text-center">{{ __('Or Sign in with ') }} <strong>admin@material.com</strong> {{ __(' and the password ') }}<strong>secret</strong> </p>
+            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">email</i>
+                  </span>
+                </div>
+                <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email', 'admin@material.com') }}" required>
+              </div>
+              @if ($errors->has('email'))
+                <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
+                  <strong>{{ $errors->first('email') }}</strong>
+                </div>
+              @endif
+            </div>
+            <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="material-icons">lock_outline</i>
+                  </span>
+                </div>
+                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password...') }}" value="{{ !$errors->has('password') ? "secret" : "" }}" required>
+              </div>
+              @if ($errors->has('password'))
+                <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
+                  <strong>{{ $errors->first('password') }}</strong>
+                </div>
+              @endif
+            </div>
+            <div class="form-check mr-auto ml-3 mt-3">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember me') }}
+                <span class="form-check-sign">
+                  <span class="check"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="card-footer justify-content-center">
+            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Lets Go') }}</button>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-6">
+            @if (Route::has('password.request'))
+                <a href="{{ route('password.request') }}" class="text-light">
+                    <small>{{ __('Forgot password?') }}</small>
+                </a>
+            @endif
+        </div>
+        <div class="col-6 text-right">
+            <a href="{{ route('register') }}" class="text-light">
+                <small>{{ __('Create new account') }}</small>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- container-scroller -->
-<!-- plugins:js -->
-<script src="/vendors/js/vendor.bundle.base.js"></script>
-<script src="/vendors/js/vendor.bundle.addons.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page-->
-<!-- End plugin js for this page-->
-<!-- inject:js -->
-<!--
-<script src="/js/off-canvas.js"></script>
-<script src="/js/hoverable-collapse.js"></script>
-<script src="/js/misc.js"></script>
-<script src="/js/settings.js"></script>
-<script src="/js/todolist.js"></script>
--->
-<script src="/js/app.js"></script>
-<!-- endinject -->
-</body>
-</html>
+@endsection

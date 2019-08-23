@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c7c1831a093cb530a3071e3f83bad13",
+    "content-hash": "f54a32f51513620d9010121412b4df32",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1478,6 +1478,52 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "silviolleite/laravelpwa",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silviolleite/laravel-pwa.git",
+                "reference": "4951f0d47b6943d9823e3c27d35b74016d99d735"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silviolleite/laravel-pwa/zipball/4951f0d47b6943d9823e3c27d35b74016d99d735",
+                "reference": "4951f0d47b6943d9823e3c27d35b74016d99d735",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelPWA\\Providers\\LaravelPWAServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelPWA\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Silvio Luis Leite",
+                    "email": "silviolleite@gmail.com"
+                }
+            ],
+            "description": "Looks like an app, feels like an app, but NOT an app.",
+            "keywords": [
+                "laravel",
+                "php",
+                "progressive web apps",
+                "pwa"
+            ],
+            "time": "2019-04-03T11:23:08+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3278,6 +3324,49 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "laravel-frontend-presets/material-dashboard",
+            "version": "v1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-frontend-presets/material-dashboard.git",
+                "reference": "28dd3137f91e2c328bd3e5f95f9417bfad014d02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/material-dashboard/zipball/28dd3137f91e2c328bd3e5f95f9417bfad014d02",
+                "reference": "28dd3137f91e2c328bd3e5f95f9417bfad014d02",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelFrontendPresets\\MaterialPreset\\MaterialPresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelFrontendPresets\\MaterialPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel 5.x Front-end preset for material dashboard",
+            "homepage": "https://github.com/creativetimofficial/material-dashboard-laravel",
+            "keywords": [
+                "laravel",
+                "material",
+                "preset"
+            ],
+            "time": "2019-07-01T10:22:33+00:00"
         },
         {
             "name": "mockery/mockery",
