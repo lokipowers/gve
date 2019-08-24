@@ -20,8 +20,7 @@ class CreateLocationsTable extends Migration
             $table->text('description')->nullable();
             $table->string('latitude', 255);
             $table->string('longitude', 255);
-            $table->integer('country_id');
-            $table->integer('county_id');
+            $table->string('country', 255);
             $table->integer('crime_rate')->default(0);
             $table->integer('protection_rate')->default(0);
             $table->softDeletes();

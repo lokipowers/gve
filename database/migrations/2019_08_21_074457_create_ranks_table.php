@@ -18,6 +18,7 @@ class CreateRanksTable extends Migration
             $table->string('name', 255);
             $table->text('description')->nullable();
             $table->string('side', 100);
+            $table->string('icon', 255);
             $table->integer('experience_required');
             $table->softDeletes();
             $table->timestamps();
