@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class GenerateLocations extends Command
+class GenerateProperties extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'gve:generateLocations';
+    protected $signature = 'gve:generateProperties';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Refresh and seed Locations Table';
+    protected $description = 'Refresh and create all Properties';
 
     /**
      * Create a new command instance.
@@ -37,10 +37,10 @@ class GenerateLocations extends Command
      */
     public function handle()
     {
-        $this->line('Refreshing Locations Table');
-        \Artisan::call('migrate:refresh --path=/database/migrations/2019_08_21_071917_create_locations_table.php');
-        $this->line('Seeding Locations Table');
-        \Artisan::call('db:seed --class=LocationsTableSeeder');
+        $this->line('Refreshing Properties Table');
+        \Artisan::call('migrate:refresh --path=/database/migrations/2019_08_26_195746_create_properties_table.php');
+        $this->line('Seeding Properties Table');
+        \Artisan::call('db:seed --class=PropertiesTableSeeder');
         $this->info('Done');
     }
 }

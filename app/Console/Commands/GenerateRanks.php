@@ -18,7 +18,7 @@ class GenerateRanks extends Command
      *
      * @var string
      */
-    protected $description = 'Refresh and see Ranks Table';
+    protected $description = 'Refresh and seed Ranks Table';
 
     /**
      * Create a new command instance.
