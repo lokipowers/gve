@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
+use Faker\Provider\Base;
+
+class HomeController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -21,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        //return view('dashboard');
+        if($this->getUser()->character === null){
+            return redirect('/character/create');
+        }
+
+        return $this->buildView('dashboard');
     }
 }

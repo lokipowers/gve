@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Location;
 use App\User;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class UserController extends BaseController
 {
     /**
      * Display a listing of the users

@@ -44,6 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $with = [
+        'character',
+        'messages',
+        'notifications'
+    ];
+
     public function character()
     {
         return $this->hasOne('App\Character');

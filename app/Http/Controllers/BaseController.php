@@ -7,14 +7,14 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
-class BaseController
+class BaseController extends Controller
 {
 
     protected $currentUser;
 
     public function getUser()
     {
-        return Auth::user();
+        return Auth::user()->first();
     }
 
     public function addData($key, $value)
