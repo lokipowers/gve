@@ -13,6 +13,21 @@ class Character extends Model
 
     protected $table = 'characters';
 
+    protected $with = [
+        'equipment',
+        'location',
+        'rank'
+    ];
+
+    protected $fillable = [
+        'name',
+        'description',
+        'user_id',
+        'side',
+        'rank_id',
+        'current_location_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -20,6 +35,16 @@ class Character extends Model
 
     public function equipment()
     {
-        return $this->hasMany('App\Equipment');
+        return $this->hasMany('App\CharacterEquipment');
+    }
+
+    public function location()
+    {
+        return $this->hasOne('App\Location', 'id', 'current_location_id');
+    }
+
+    public function rank()
+    {
+        return $this->hasOne('App\Rank', 'id', 'rank_id');
     }
 }

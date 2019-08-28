@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    @include('partials.forms.character', ['character' => null])
+                    @include('partials.forms.character', ['character' => null, 'route' => 'character.create'])
                 </div>
             </div>
         </div>

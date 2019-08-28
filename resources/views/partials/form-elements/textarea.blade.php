@@ -6,6 +6,7 @@
               aria-describedby="{{ $name }}-description"
               placeholder="{{ $placeholder ?? '' }}"
               rows="5"
+              name="{{ $name }}"
               @if(isset($required) && $required === true)
               required="true"
               aria-required="true"

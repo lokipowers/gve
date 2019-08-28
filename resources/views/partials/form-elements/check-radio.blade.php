@@ -20,6 +20,10 @@
                    id="input-{{ $type ?? 'checkbox' }}-{{  $name }}"
                    value="{{ $value }}"
                    name="{{ $name }}"
+                   @if(isset($required) && $required === true)
+                   required="true"
+                   aria-required="true"
+                   @endif
             >
             {{ $label }}
             <span class="{{ $span }}">
