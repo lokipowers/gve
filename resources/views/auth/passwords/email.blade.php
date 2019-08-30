@@ -7,7 +7,7 @@
       <form class="form" method="POST" action="{{ route('password.email') }}">
         @csrf
 
-        <div class="card card-login card-hidden mb-3">
+        <div class="card card-login mb-3">
           <div class="card-header card-header-primary text-center">
             <h4 class="card-title"><strong>{{ __('Forgot Password') }}</strong></h4>
           </div>

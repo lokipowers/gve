@@ -24,6 +24,7 @@ class CreateLocationsTable extends Migration
             $table->integer('population');
             $table->integer('crime_rate')->default(0);
             $table->integer('protection_rate')->default(0);
+            $table->string('currency', 3)->default('USD');
             $table->softDeletes();
             $table->timestamps();
         });

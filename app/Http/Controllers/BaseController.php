@@ -14,7 +14,7 @@ class BaseController extends Controller
 
     public function getUser()
     {
-        return Auth::user()->first();
+        return Auth::user();
     }
 
     public function addData($key, $value)

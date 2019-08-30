@@ -1,5 +1,9 @@
 <footer class="footer">
   <div class="container-fluid">
+      <div class="copyright float-left">
+          <small>Logged in as: {{ $currentUser->email }}</small>
+      </div>
+
     <!--<nav class="float-left">
       <ul>
         <li>
@@ -25,8 +29,7 @@
       </ul>
     </nav>-->
     <div class="copyright float-right">
-      &copy;
-        {{ Date('Y') }}, GVE.World
+        <small>&copy; {{ Date('Y') }}, GVE.World</small>
     </div>
   </div>
 </footer>

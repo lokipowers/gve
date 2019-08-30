@@ -1,4 +1,4 @@
-<div class="fileinput fileinput-new text-center" data-provides="fileinput">
+<div class="fileinput fileinput-new text-center d-block" data-provides="fileinput">
     <input
         type="file"
         class="dropify"

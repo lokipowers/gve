@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Character;
+use App\Http\Controllers\Traits\CharacterActivity;
 use App\Location;
 use App\Rank;
 use App\User;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class CharacterController extends BaseController
 {
 
+    use CharacterActivity;
 
     public function index()
     {
@@ -24,6 +26,11 @@ class CharacterController extends BaseController
     public function viewOwn()
     {
         $character = $this->getUser()->character;
+
+        if($character===null){
+            return redirect(route('character.create'));
+        }
+
         $character->avatar_url = $this->getCharacterAvatar($character);
         $this->addData('character', $character);
         return $this->buildView('character.view');
@@ -31,7 +38,7 @@ class CharacterController extends BaseController
 
     public function view($id)
     {
-        $character = Character::where('id', '=', $id)->first();
+        $character = Character::where('id', '=', $id)->firstOrFail();
         $character->avatar_url = $this->getCharacterAvatar($character);
 
         $this->addData('character', $character);
@@ -40,6 +47,9 @@ class CharacterController extends BaseController
 
     public function create()
     {
+        if($this->getUser()->character !== null){
+            return redirect(route('character.viewOwn'));
+        }
         return $this->buildView('character.create');
     }
 
@@ -51,6 +61,8 @@ class CharacterController extends BaseController
         $request->request->add(['current_location_id' => Location::where('population', '>', 1000)->inRandomOrder()->first()->id]);
         $request->request->add(['rank_id' => Rank::where('side', $request->side)->where('experience_required', 0)->first()->id]);
         $request->request->add(['user_id' => $this->getUser()->id]);
+        $request->request->add(['dollars' => 1000.00]);
+        $request->request->add(['gve_coin' => 10]);
 
         $newCharacter = $character->create($request->except(['_token', '_method', 'character_avatar']));
 
@@ -59,6 +71,8 @@ class CharacterController extends BaseController
         }
 
         $newCharacter->save();
+
+        $this->logCharacterActivity($this->getUser()->id, $newCharacter->id, 'info', 'Character Created', $newCharacter->name . ' was born', 'child_care');
 
         return redirect()->route('character.view', ['id' => $newCharacter->id])->withStatus(__('Character successfully created.'));
     }

@@ -16,7 +16,8 @@ class Character extends Model
     protected $with = [
         'equipment',
         'location',
-        'rank'
+        'rank',
+        'activity'
     ];
 
     protected $fillable = [
@@ -25,7 +26,9 @@ class Character extends Model
         'user_id',
         'side',
         'rank_id',
-        'current_location_id'
+        'current_location_id',
+        'dollars',
+        'gve_coin'
     ];
 
     public function user()
@@ -46,5 +49,9 @@ class Character extends Model
     public function rank()
     {
         return $this->hasOne('App\Rank', 'id', 'rank_id');
+    }
+
+    public function activity(){
+        return $this->hasMany('App\CharacterActivityLog');
     }
 }
