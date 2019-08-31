@@ -67,5 +67,39 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('character/{id}', "CharacterController@view")->name('character.view');
     Route::get('character/{id}/edit', "CharacterController@edit")->name('character.edit');
     Route::put('character/{id}/edit', "CharacterController@update")->name('character.update');
+
+    // Equipment
+    Route::get('equipment', "EquipmentController@indexInventory")->name('equipment.inventory');
+    Route::get('equipment/buy', "EquipmentController@indexMarketplace")->name('equipment.marketplace');
+    Route::get('equipment/buy/{slug}', "EquipmentController@viewMarketplace")->name('equipment.purchase');
+    Route::get('equipment/{slug}', "EquipmentController@viewInventory")->name('equipment.inventory.item');
+
+    // Travel
+    Route::get('travel', "TravelController@index")->name('travel');
+    Route::post('trave', "TravelController@travel")->name('travelTo');
+
+    // Activities
+    Route::get('activities', "ActivityController@index")->name('activities.index');
+    Route::get('activities/{slug}', "ActivityController@view")->name('activities.view');
+    Route::post('activities/{slug}', "ActivityController@start")->name('activities.start');
+
+    // Properties
+    Route::get('properties', "PropertyController@index")->name('properties.index');
+    Route::get('properties/{slug}', "PropertyController@view")->name('properties.view');
+    Route::post('properties/{slug}/buy')->name('properties.purchase');
+
+
+    // Messages
+    Route::get('messages', "MessageController@index")->name('messages.index');
+    Route::get('messages/chat/{username}', "MessageController@chat")->name('messages.chat');
+    Route::post('messages/chat/{username}', "MessageController@send")->name('messages.send');
+    Route::delete('messages/chat{username}', "MessageController@deleteChat")->name('message.delete.chat');
+    Route::delete('messages/message/{id}', "MessageController@deleteMessage")->name('message.delete.message');
+
+    // Notifications
+    Route::get('notifications', "NotificationController@index")->name('notifications');
+    Route::post('notifications/read/{id}', "Notifications@markRead")->name('notifications.read');
+
+
 });
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Character;
 use App\Http\Controllers\Traits\CharacterActivity;
+use App\Http\Controllers\Traits\CurrencyConverter;
 use App\Location;
 use App\Rank;
 use App\User;
@@ -14,10 +15,11 @@ class CharacterController extends BaseController
 {
 
     use CharacterActivity;
+    use CurrencyConverter;
 
     public function index()
     {
-        $characters = Character::all()->paginate(20);
+        $characters = Character::paginate(20);
         $this->addData('characters', $characters);
 
         return $this->buildView('character.index');
@@ -31,7 +33,6 @@ class CharacterController extends BaseController
             return redirect(route('character.create'));
         }
 
-        $character->avatar_url = $this->getCharacterAvatar($character);
         $this->addData('character', $character);
         return $this->buildView('character.view');
     }
@@ -39,8 +40,6 @@ class CharacterController extends BaseController
     public function view($id)
     {
         $character = Character::where('id', '=', $id)->firstOrFail();
-        $character->avatar_url = $this->getCharacterAvatar($character);
-
         $this->addData('character', $character);
         return $this->buildView('character.view');
     }
@@ -100,7 +99,7 @@ class CharacterController extends BaseController
         );
     }
 
-    protected function getCharacterAvatar($character)
+    public function getCharacterAvatar($character)
     {
         if(!empty($character->avatar)) {
             return Storage::url($character->avatar);

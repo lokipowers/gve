@@ -31,9 +31,12 @@
                             <p class="card-description">{{ $character->description }}</p>
                             <a href="#pablo" class="btn btn-rose btn-round">Follow</a>
                         </div>
+                        <div class="card-footer">
+                            {{ $character->currency->symbol }} {{ $character->currency->converted }}
+                        </div>
                     </div>
 
-                    @include('partials.cards.open', ['title' => 'Character Location', 'category' => $character->location->name])
+                    @include('partials.cards.open', ['title' => 'Character Location', 'category' => $character->location->name . ', '.$character->location->country])
                     <img src="https://maps.googleapis.com/maps/api/staticmap?
                         center={{ $character->location->latitude }},{{ $character->location->longitude }}
                         &zoom=6&size=640x640&maptype=roadmap

@@ -1,9 +1,4 @@
 <div class="sidebar" data-color="purple" data-background-color="black" data-image="/images/sidebar.jpg">
-    <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-        Tip 2: you can also add an image using data-image tag
-    -->
     @php
 
         if(!isset($activePage)){
@@ -30,6 +25,41 @@
                     <i class="material-icons">assignment_ind</i>
                     <p>{{ $currentUser->character->name ?? 'Create Character' }}</p>
                 </a>
+            </li>
+            <li class="nav-item {{ $activePage == 'characters' ? ' active' : '' }}">
+                <a class="nav-link" href="{{ route('character.viewAll') }}">
+                    <i class="material-icons">group</i>
+                    <p>Game Characters</p>
+                </a>
+            </li>
+            <li class="nav-item {{ ($activePage == 'equipment/buy') ? ' active' : '' }}">
+                <a class="nav-link collapsed" data-toggle="collapse" href="#equipment" aria-expanded="false">
+                    <i class="material-icons">style</i>
+                    <p>
+                        Equipment
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="equipment">
+                    <ul class="nav">
+                        <li class="nav-item{{ $activePage == 'equipment' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('equipment.inventory') }}">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">style</i>
+                                </span>
+                                <span class="sidebar-normal">{{ __('Inventory') }}</span>
+                            </a>
+                        </li>
+                        <li class="nav-item{{ $activePage == 'equipment/buy' ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('equipment.marketplace') }}">
+                                <span class="sidebar-mini">
+                                    <i class="material-icons">shopping_cart</i>
+                                </span>
+                                <span class="sidebar-normal">{{ __('Purchase') }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         <!--<li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">

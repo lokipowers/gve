@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\Traits\CurrencyConverter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Scout\Searchable;
@@ -10,6 +12,7 @@ class Character extends Model
 {
     use SoftDeletes;
     use Searchable;
+    use CurrencyConverter;
 
     protected $table = 'characters';
 
@@ -53,5 +56,16 @@ class Character extends Model
 
     public function activity(){
         return $this->hasMany('App\CharacterActivityLog');
+    }
+
+    public function getCurrencyAttribute()
+    {
+        return $this->getConvertedCurrency($this->dollars, $this->location->currency);
+    }
+
+    public function getAvatarUrlAttribute()
+    {
+        $characterController = new CharacterController();
+        return $characterController->getCharacterAvatar($this);
     }
 }

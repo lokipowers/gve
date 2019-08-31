@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('gve:updateCurrencyRates')->hourly()->emailOutputOnFailure('lokipowers13@gmail.com');
     }
 
     /**

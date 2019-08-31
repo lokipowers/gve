@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Auth;
 trait CharacterActivity
 {
 
-    public function __construct()
-    {
-
-    }
 
     protected function logCharacterActivity(int $userId, int $characterId, string $status, string $name, string $content, string $icon = null)
     {
