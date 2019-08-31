@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call([RanksTableSeeder::class]);
         $this->call([LocationsTableSeeder::class]);
         $this->call([PropertiesTableSeeder::class]);
+        $this->call([CurrencyRatesTableSeeder::class]);
     }
 }
