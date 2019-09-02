@@ -16,7 +16,7 @@ trait CharacterActivity
         $activity = new CharacterActivityLog();
 
         $activity->user_id = $userId;
-        $activity->character_id = $userId;
+        $activity->character_id = $characterId;
         $activity->status = $status;
         $activity->name = $name;
         $activity->content = $content;
