@@ -22,17 +22,18 @@ class VehiclesTableSeeder extends Seeder
     public function run()
     {
         $this->vehicles();
-
+        $this->buildVehicles();
+        DB::table('vehicles')->insert($this->vehiclesParsed);
     }
 
 
     protected function vehicles()
     {
         // Audi
-        /*$this->generateVehicle(
+        $this->generateVehicle(
             'Audi A1 Sportback',
             'Compact 5-door Sportback with LED headlights, Audi Smartphone interface and Audi Pre-sense front',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/A1/new_a1sb_sport_side.png',
             21562.1800,
             3.5,
             4.4,
@@ -40,12 +41,16 @@ class VehiclesTableSeeder extends Seeder
             137,
             7.5,
             147,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a1/A1_1.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a1/A1_2.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a1/Hero_desktop.jpg'
+            ]
         );
         $this->generateVehicle(
             'Audi S3 Cabriolet',
             '-door performance cabriolet with automatic acoustic hood, distinctive ‘S’ styling, and Fine Nappa leather seats.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/A3/A3-Cabriolet-Side.png',
             52206.3700,
             4.3,
             4.2,
@@ -53,12 +58,15 @@ class VehiclesTableSeeder extends Seeder
             155,
             4.6,
             300,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_1.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_2.jpg',
+            ]
         );
         $this->generateVehicle(
             'Audi RS 3 Saloon',
             '4-door performance saloon with quattro all-wheel drive and 2.5-litre turbocharged five-cylinder engine.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/A3/a3_rs3_saloon_side_19.png',
             57489.0100,
             4.3,
             4.2,
@@ -66,12 +74,16 @@ class VehiclesTableSeeder extends Seeder
             155,
             4.6,
             300,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_Hero_desktop.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_2.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_3.jpg'
+            ]
         );
         $this->generateVehicle(
             'Audi RS 3 Sportback',
             '5-door performance hatchback with quattro all-wheel drive and 2.5-litre turbocharged five-cylinder engine.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/A3/rs3_sportback_side_19.png',
             56273.21,
             4.3,
             4.2,
@@ -79,13 +91,16 @@ class VehiclesTableSeeder extends Seeder
             155,
             4.6,
             300,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/A3/Seats/RS3_Sportback_seats.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_1.jpg'
+            ]
         );
 
         $this->generateVehicle(
             'Audi S4 Saloon',
             '4-door performance Saloon with unique S4 exterior styling, enhanced brakes and suspension.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon-side-d1.png',
             58358.30,
             4.4,
             4.6,
@@ -93,12 +108,16 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.7,
             347,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_headlights.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_seats.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_auditech.jpg'
+            ]
         );
         $this->generateVehicle(
             'Audi RS 4 Avant',
             '5-door high-performance sports estate with a 2.9 TFSI engine with quattro all-wheel drive, RS styling, RS Sport exhaust and and Audi Virtual Cockpit.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/RS4/rs_4_avant--side.png',
             82169.71,
             4.4,
             4.6,
@@ -106,12 +125,16 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.7,
             347,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_headlights.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_seats.jpg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_auditech.jpg'
+            ]
         );
         $this->generateVehicle(
             'Audi A5 Cabriolet',
             '2-door Cabriolet with fully automatic acoustic hood and Parking system plus.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/A5/a5-cab-sline-19-side.png',
             47075.70,
             4.2,
             3.5,
@@ -119,12 +142,15 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.1,
             354,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/A5/Headlights/a5-coupe-sport-headlights-19.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/A5/Seats/Front-Sport-seats.jpeg'
+            ]
         );
         $this->generateVehicle(
             'Audi RS 5 Coupe',
             '2-door high-performance sports Coupé with a 2.9 TFSI engine with quattro all-wheel drive, RS styling, RS Sport exhaust and and Audi Virtual Cockpit.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A5/RS5-Coupe/RS5-Coupe-Side.png',
             83871.83,
             4.4,
             5.0,
@@ -132,12 +158,12 @@ class VehiclesTableSeeder extends Seeder
             174,
             3.9,
             354,
-            ''
+            null
         );
         $this->generateVehicle(
             'Audi RS 5 Sportback',
             '5-door high-performance sports car with a 2.9 TFSI engine with quattro all-wheel drive, RS styling, RS Sport exhaust and and Audi Virtual Cockpit.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A5/RS5-Sportback/RS5-Sportback-Side.png',
             83871.83,
             4.4,
             5.0,
@@ -145,12 +171,12 @@ class VehiclesTableSeeder extends Seeder
             174,
             3.9,
             354,
-            ''
+            null
         );
         $this->generateVehicle(
             'Audi S6 Saloon',
             '4-door performance Saloon with a 4.0-litre V8 TFSI engine, quattro and S Super Sport front seats.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A6/S6-Saloon/s6_saloon--side.png',
             73215.36,
             4.4,
             4.4,
@@ -158,12 +184,12 @@ class VehiclesTableSeeder extends Seeder
             255,
             5.0,
             349,
-            ''
+            null
         );
         $this->generateVehicle(
             'Audi S7 Sportback',
             '5-door performance Sportback with Matrix LED headlights, Virtual Cockpit and heated Super Sport seats.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A7/S7-Sportback/s7_sportback--side.png',
             83501.01,
             4.4,
             4.4,
@@ -171,12 +197,12 @@ class VehiclesTableSeeder extends Seeder
             255,
             5.0,
             349,
-            ''
+            null
         );
         $this->generateVehicle(
             'Audi SQ5',
             '5-door performance SUV with distinctive \'S\' styling, Audi Virtual Cockpit and Fine Nappa leather seats.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/Q5/SQ5/sq5--side.png',
             66911.44,
             4.0,
             4.5,
@@ -184,12 +210,12 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.1,
             313,
-            ''
+            null
         );
         $this->generateVehicle(
             'Audi Q8',
             'Luxury SUV with Matrix LED headlights, MMI Navigation and Parking System Plus.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/Q8/s-line/q8_sline_side.png',
             81470.62,
             3.7,
             4.5,
@@ -197,12 +223,16 @@ class VehiclesTableSeeder extends Seeder
             144,
             6.3,
             286,
-            ''
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/Q8/Headlights/Q8-Sline-Headlights.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/Q8/s-line/q8-sline-seats.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/MY20/Q8/s-line/q8-sline-auditech.jpeg'
+            ]
         );
         $this->generateVehicle(
             'Audi TT RS Coupé',
             '2 door high-performance sports coupé with a 2.5-litre TFSI 5-cylinder engine, ‘RS’ styling and Audi virtual cockpit with a RS specific screen.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/TT/TTRS-Coupe/TTRS/ttrs_coupe_ttrs-coupe_side.png',
             66741.23,
             4.5,
             4.0,
@@ -210,12 +240,12 @@ class VehiclesTableSeeder extends Seeder
             174,
             3.7,
             395,
-            ''
+            null
         );
         $this->generateVehicle(
             'Audi TT RS Roadster',
             '2 door high-performance sports coupé with a 2.5-litre TFSI 5-cylinder engine, ‘RS’ styling and Audi Virtual Cockpit with a RS specific screen',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/MY20/TT/TTRS-Roadster/TTRS/ttrs_roadster_side_new.png',
             68868.88,
             4.5,
             4.0,
@@ -223,13 +253,13 @@ class VehiclesTableSeeder extends Seeder
             155,
             3.9,
             395,
-            ''
+            null
         );
 
         $this->generateVehicle(
             'Audi R8 Coupé',
             '2-door high-performance Audi Sport coupé with a 5.2 litre V10 engine, Audi Virtual Cockpit, dual-branch oval tailpipes and parking system plus.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/R8/r8_coupev10-quattro_side_19.png',
             155865.3000,
             4.7,
             4.3,
@@ -237,12 +267,16 @@ class VehiclesTableSeeder extends Seeder
             205,
             3.2,
             610,
-            null
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Headlights/r8_v10_quattro-headlights.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Seats/r8_v10_quattro-seats.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Suspension/r8_v10_quattro-performance.jpeg'
+            ]
         );
         $this->generateVehicle(
             'Audi R8 Spyder',
             '2-door high-performance Audi Sport convertible with a 5.2 litre V10 engine, Audi Virtual Cockpit, dual-branch oval tailpipes and parking system plus.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/R8/r8_spyder10-quattro_side_19.png',
             166430.59,
             4.9,
             3.5,
@@ -250,12 +284,16 @@ class VehiclesTableSeeder extends Seeder
             200,
             3.2,
             620,
-            null
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Headlights/r8_v10_quattro-headlights.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Seats/r8_v10_quattro-seats.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/AudioCommunication/r8_v10_quattro-audiotech.jpg'
+            ]
         );
         $this->generateVehicle(
             'Audi E-Tron',
             'Fully electric, 5-door SUV with virtual door mirrors, Pre-sense Front and Basic, and a rear-view camera as standard.',
-            '',
+            'https://www.audi.co.uk/content/dam/audiadaptive/car-images/Web-Tablet/Side-Images/e-tron/e-tron-launch-edition-side.png',
             166430.59,
             4.0,
             4.8,
@@ -263,10 +301,172 @@ class VehiclesTableSeeder extends Seeder
             124,
             5.7,
             402,
-            null
-        );*/
+            [
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/e-tron/Desktop/e-tron-headlight.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/e-tron/Desktop/e-tron-seats.jpeg',
+                'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/e-tron/Desktop/e-tron-suspension.jpg'
+            ]
+        );
 
         // Lambo
+        $this->generateVehicle(
+            'Lamborghini Huracan Evo Spyder',
+            'Driving a Spyder is a thrill in itself, but the Huracán Evo Spyder was created to amplify your driving experience to the max. Color, scent, and sound become one with the car’s compelling design and ultra-lightweight materials.
+The power of the 640 CV V10 engine vibrates into a roar, and the supersport exhaust sound fills your ears. The car’s perfectly sleek, aerodynamic body slices through the air, and you race along with it; the thrill of your desire, lifting you higher',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/evo-slider/NEW/huracan-evo-spyder.png',
+            265210.53,
+            4.9,
+            4.8,
+            4.7,
+            202,
+            2.9,
+            629,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/evo-slider/int_right.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/evo-slider/design-left.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/evo-slider/RP---Huracan-Evo-20.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Huracan Evo',
+            'The Huracán EVO represents the natural evolution of the most successful V10 in Lamborghini history. It is the result of fine-tuning and consolidation which involves the already existing features and performance of Huracán, combined with the development of new solutions in terms of efficiency and design. But overall this vehicle stands out for its ability to anticipate the moves and satisfy the desires of the driver, in harmony with the Lamborghini DNA.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/huracan/car/huracan-evo.png',
+            250454.39,
+            4.9,
+            4.8,
+            4.7,
+            202,
+            2.9,
+            629,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/Evo/restyle/upgrade/overview-right.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/Evo/restyle/upgrade/design-right.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/Evo/restyle/RP---Huracan-Evo-3.jpg',
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Huracan Performante Spyder',
+            'The Huracán Performante has decided to lower its roof and transform itself into the Spyder with the highest performance that the Huracán family has ever seen. Its lines are designed to thrill at first sight and its state-of-the-art technology has been developed to provide a one-of-a-kind driving experience. Weighing in at 35 kg less than the Huracán 4WD Spyder and with 30 HP more, this newest addition to the House of the Raging Bull vaunts the best power-to-weight ratio in the Huracán Spyder range. It uses Forged Composites® material and the new ALA (Lamborghini Active Aerodynamics) technology. The Huracán Performante Spyder: power has become breathtakingly beautiful.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/huracan/car/hps-carousel-family.png',
+            289359.92,
+            4.9,
+            4.8,
+            4.7,
+            201,
+            3.1,
+            629,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante-spyder/overview-right.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante-spyder/intern2.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante-spyder/design-left.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Huracan Performante',
+            'The Huracán Performante has reworked the concept of super sports cars and taken the notion of performance to levels never seen before. The vehicle has been re-engineered in its entirety, as regards its weight, engine power, chassis and above all by introducing an innovative system of active aerodynamics: ALA. The use of the awarded Forged Composites®, a shapable forged carbon fiber material patented by Automobili Lamborghini, is a real nice touch and it contributes to make the vehicle even lighter in weight. Besides its extraordinary technological properties, it also conveys a new idea of beauty.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/car-slider/huracan-performante/performante-carousel-family.png',
+            261396.57,
+            4.9,
+            4.8,
+            4.7,
+            201,
+            2.9,
+            629,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante/intern2-huracan-performante.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/configuratore%20nuovo/huracan-performante-configuratore.jpg',
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Aventador SVJ Roadster',
+            'There’s only one adjective to describe SVJ Roadster: unrivaled.
+Produced in just 800 units, it is the most iconic model of the Aventador family, thanks to its aerodynamic lines that slice through the air, and its breathtaking design, the expression of the most refined Italian taste and craftsmanship.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj-roadster/car/SVJ_Roadster_gateway%20Aventador.png',
+            467043.94,
+            4.9,
+            4.7,
+            4.6,
+            217,
+            2.9,
+            758,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj-roadster/header.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/PAGINA%20MODELLO_DEF/compressed/freni-avendator-svj-3.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj-roadster/intern2.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Aventador SVJ',
+            'The future is unknown. It is a journey, an adventure. And above all, it is a challenge.
+Lamborghini has never shied away from challenges, which is precisely why it created the new Aventador SVJ. To combine cutting-edge technology with extraordinary design, without ever coming to compromises.
+In a future driven by technology, it’s easy to lose track of emotions. But in the future we are shaping, real emotions won’t be left behind. Because at the wheel, there will always be a person.
+Aventador SVJ. Real emotions shape the future.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/aventador/aventador%20svj/aventador-svj-coup%C3%A8/car.png',
+            425529.30,
+            4.9,
+            4.7,
+            4.6,
+            217,
+            2.9,
+            758,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/Restyling/Lamborghini_Aventador_SVJ_Green_Track_09.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/Restyling/design-left.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/Restyling/white_interior_final.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Aventador S Roadster',
+            'The icon that inherited the legacy of the historic S models of the Miura, Islero, Countach, and Urraco returns to outdo itself in its most exciting version: the Aventador S Roadster. 
+The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini design, unparalleled in this open top version, are joined in the Aventador S Roadster by the most sophisticated technology of the range, including the new LDVA (Lamborghini Dinamica Veicolo Attiva), which provides an incomparable driving experience, all of this able to feed the ego even of those who constantly seek the most powerful and adrenaline-pumping sensations.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/aventador/cars/aventador-s-roadster-car.png',
+            460247,
+            4.9,
+            4.7,
+            4.6,
+            217,
+            2.9,
+            758,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s-roadster/04_12_Restyling/header.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s-roadster/04_12_Restyling/intern2.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s-roadster/04_12_Restyling/design-right.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Aventador S',
+            'An icon cannot be reinvented, it can only be challenged. And only Aventador could surpass itself. Following Miura, Islero, Countach, and Urraco, Lamborghini’s most iconic model now reaps the inheritance of the historic S models and evolves into the new Aventador S. Exclusive Lamborghini design and the new V12 engine with a whopping 740 HP now join the most sophisticated technology of the range, featuring the new LDVA (Lamborghini Dinamica Veicolo Attiva/Lamborghini Active Vehicle Dynamics), which offers an unparalleled driving experience to all those who honour their egos by challenging themselves every day.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/aventador/cars/aventador-s/aventador-s-auto-carousel-family.png',
+            417826,
+            4.9,
+            4.7,
+            4.6,
+            217,
+            2.9,
+            758,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s/Restyling/overview-right.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s/Restyling/design-right.jpg',
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s/Restyling/intern2.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Lamborghini Centenario',
+            'The new Lamborghini Centenario represents a new, extremely precious piece in Lamborghini\'s one-off strategy. It is a perfect example of the innovative design and the engineering skills of the bull-branded manufacturer.',
+            'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/one-off/cars/centenario.png',
+            1900000,
+            5.0,
+            5.0,
+            5.0,
+            217,
+            2.7,
+            758,
+            [
+                'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/one-off/centenario/bg-huracan-right-skew.jpg'
+            ]
+
+        );
+
 
         // Porsche
         $this->generateVehicle(
@@ -475,7 +675,7 @@ class VehiclesTableSeeder extends Seeder
         );
         $this->generateVehicle(
             'Porsche 918 Spyder',
-            '',
+            'The 918 Spyder is powered by a 4,593 cc (4.6 L; 280.3 cu in) naturally aspirated V8 engine built on the same architecture as the one used in the RS Spyder Le Mans Prototype racing car without any engine belts.',
             'https://banner2.cleanpng.com/20180608/vl/kisspng-porsche-911-gt3-2017-porsche-911-porsche-911-gt2-p-porsche-918-spyder-5b1aa9d9bf5d88.5494302715284740737838.jpg',
             1276587.90,
             5.0,
@@ -513,9 +713,6 @@ class VehiclesTableSeeder extends Seeder
         $vehicle->bhp = $bhp;
         $vehicle->images = $this->getImagesUrls($images, $name, 'public/vehicles/gallery');
 
-        dd($vehicle);
-
-
         $this->vehiclesRaw[] = $vehicle;
     }
 
@@ -534,11 +731,12 @@ class VehiclesTableSeeder extends Seeder
                 'top_speed' => $vehicle->topSpeed,
                 '0_62' => $vehicle->acc,
                 'bhp' => $vehicle->bhp,
-                'images' => $vehicle->images,
-                'deleted_at' => null,
+                'images' => json_encode($vehicle->images),
                 'created_at' => now(),
                 'updated_at' => now()
             ];
+
+            //dd($this->vehiclesParsed);
         }
     }
 
