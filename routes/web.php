@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Equipment
     Route::get('equipment', "EquipmentController@indexInventory")->name('equipment.inventory');
     Route::get('equipment/buy', "EquipmentController@indexMarketplace")->name('equipment.marketplace');
-    Route::get('equipment/buy/{slug}', "EquipmentController@viewMarketplace")->name('equipment.purchase');
+    Route::get('equipment/buy/{type}/{id}', "EquipmentController@viewMarketplace")->name('equipment.purchase');
     Route::get('equipment/{slug}', "EquipmentController@viewInventory")->name('equipment.inventory.item');
 
     // Travel

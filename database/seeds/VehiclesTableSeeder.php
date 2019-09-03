@@ -417,7 +417,7 @@ Aventador SVJ. Real emotions shape the future.',
         );
         $this->generateVehicle(
             'Lamborghini Aventador S Roadster',
-            'The icon that inherited the legacy of the historic S models of the Miura, Islero, Countach, and Urraco returns to outdo itself in its most exciting version: the Aventador S Roadster. 
+            'The icon that inherited the legacy of the historic S models of the Miura, Islero, Countach, and Urraco returns to outdo itself in its most exciting version: the Aventador S Roadster.
 The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini design, unparalleled in this open top version, are joined in the Aventador S Roadster by the most sophisticated technology of the range, including the new LDVA (Lamborghini Dinamica Veicolo Attiva), which provides an incomparable driving experience, all of this able to feed the ego even of those who constantly seek the most powerful and adrenaline-pumping sensations.',
             'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/gateway-family/aventador/cars/aventador-s-roadster-car.png',
             460247,
@@ -673,10 +673,11 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/model-series-e3-cayenne-coupe-gallery-image-36/zoom2/0d5f1dcd-4a32-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg'
             ]
         );
+        /*
         $this->generateVehicle(
             'Porsche 918 Spyder',
-            'The 918 Spyder is powered by a 4,593 cc (4.6 L; 280.3 cu in) naturally aspirated V8 engine built on the same architecture as the one used in the RS Spyder Le Mans Prototype racing car without any engine belts.',
-            'https://banner2.cleanpng.com/20180608/vl/kisspng-porsche-911-gt3-2017-porsche-911-porsche-911-gt2-p-porsche-918-spyder-5b1aa9d9bf5d88.5494302715284740737838.jpg',
+            '/var/www/dev.gve.world/resources/graphics/cars/porsche-918.png',
+            'https://png2.cleanpng.com/sh/980941764631322deed36c1bce087230/L0KzQYm3WMA0N5lrjpH0aYP2gLBuTcIxOWkyiNH7c3PrdX6CUcEueJD3i9VxZT28QYm0kCB6bJZ3ReJ4coPmeLa0WcMxNZRmRd94ZHXvf373jCJ0a5lqRas6OD32gMrrhgIueJD3i9VxZT3mdbB7hgIueKZqiuZ4LUXlRoW8WfZlaWk7TNM9LkG8R4qCUsE3OWY4S6U5M0K8Q4eBWcgveJ9s/kisspng-2018-porsche-911-porsche-918-spyder-porsche-930-ca-modelo-porsche-918-spyder-porsche-center-puerto-5b6459fda864a4.1979921615333032936898.png',
             1276587.90,
             5.0,
             5.0,
@@ -690,19 +691,155 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
                 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/800-7411-1540489318.jpg'
             ]
         );
+        */
         // Ferrari
 
-        // Ford
-
-        // Nissan
+        // Volkswagen
+        $this->generateVehicle(
+            'Volkswagen up!',
+            'THe smallest Volkswagen is more colourful and sharper with newly designed body panels, new colours, new wheels, a completely redesigned interior and a new infotainment system.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/30101/hero/480/0.png',
+            12163.63,
+            4.3,
+            4.5,
+            4.3,
+            101,
+            14.4,
+            60,
+            [
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/up-pa/gallery/Upfullsize8.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/up-pa/gallery/Upfullsize2.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/up-pa/gallery/Upfullsize5.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Volkswagen Polo GTI',
+            'The Polo with an exterior designed to turn heads which is matched by an interior that\'s totally at home in the digital age.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/30200/30200-2974/480/0.png',
+            26137.32,
+            3.0,
+            5.0,
+            3.0,
+            148,
+            6.7,
+            197,
+            null
+        );
+        $this->generateVehicle(
+            'Volkswagen T-Roc R-Line',
+            'Born confident',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/30361/30361-3040/480/0.png',
+            41884.87,
+            4.3,
+            4.6,
+            4.7,
+            134,
+            7.2,
+            187,
+            null
+        );
+        $this->generateVehicle(
+            'Volkswagen Golf GTI TCR',
+            'The iconic GTI, but with the DNA of a race car. The GTI TCR with its uniquely shaped front and rear bumpers and rear spoiler, as well as unique GTI TCR badging, this car is not one for blending in.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/30316/30316-10436/480/0.png',
+            45450.69,
+            4.5,
+            5.0,
+            4.5,
+            155,
+            5.6,
+            286,
+            null
+        );
+        $this->generateVehicle(
+            'Volkswagen Tiguan R-Line Tech',
+            'Turn heads with the ultimate Tiguan that includes the ultimate in luxury and refinement with a dynamic sporty look.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/31105/31105-10422/480/0.png',
+            50144.79,
+            4.0,
+            4.4,
+            4.0,
+            143,
+            6.2,
+            237,
+            null
+        );
+        $this->generateVehicle(
+            'Volkswagen Passat Saloon R-Line',
+            'Turn heads with the ultimate Passat that includes the ultimate in luxury and refinement with a dynamic sporty look.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/31300/31300-3040/480/0.png',
+            49197.53,
+            4.0,
+            5.0,
+            4.0,
+            153,
+            6.4,
+            237,
+            [
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/passat-saloon/passat-saloon-gallery-1.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/passat-saloon/passat-saloon-gallery-4.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/passat-saloon/passat-saloon-gallery-6.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Volkswagen Touran R-Line',
+            'Our top of the range R-Line is the ultimate in style and quality, with a bespoke R-Line body kit, tinted glass and 18" Marseille alloy wheels. Attractive R-Line design cues are continued inside with bespoke R-Line upholstery and steering wheel.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/31005/hero/480/0.png',
+            36508.98,
+            4.4,
+            4.8,
+            4.0,
+            130,
+            9.3,
+            148,
+            [
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/touran-nf/gallery/1d.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/touran-nf/gallery/2c.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/touran-nf/gallery/1b.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Volkswagen Arteon R-Line',
+            'The Arteon is a newly developed premium Volkswagen model. A fastback saloon with cutting-edge design and predictive driver assistance systems, the Arteon is a true driver of innovation.',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/31505/31505-3040/480/0.png',
+            49662.11,
+            4.1,
+            4.5,
+            3.8,
+            155,
+            5.6,
+            268,
+            [
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/arteon/gallery_full_1.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/arteon/gallery_full_7.jpg',
+                'https://www.volkswagen.co.uk/assets/common/content/mlp/arteon/gallery_full_2_v2.jpg'
+            ]
+        );
+        $this->generateVehicle(
+            'Volkswagen Touareg V6 R-Line',
+            'For a sportier style, the R-Line has unique front & rear bumpers, side skirts, 20" \'Braga\' diamond turned alloy wheels and keyless start',
+            'https://imagecom.volkswagen.co.uk/api/image/2.1/360s/car/vw/31705/31705-4664/480/0.png',
+            67786.88,
+            4.2,
+            4.5,
+            3.9,
+            155,
+            5.9,
+            335,
+            [
+                'https://www.volkswagen.co.uk/assets/content/new-cars/touareg-gallery-recrop.jpg',
+                'https://www.volkswagen.co.uk/assets/content/new-cars/touareg-imageneww.jpg',
+                'https://www.volkswagen.co.uk/assets/content/new-cars/touareg-new-img.jpg'
+            ]
+        );
     }
 
-    protected function generateVehicle($name, $description, $thumbnail, $salePrice, $performance, $safety, $handling, $topSpeed, $acc, $bhp, $images)
+    protected function generateVehicle($name, $description, $thumbnail, $salePrice, $performance, $safety, $handling, $topSpeed, $acc, $bhp, $images, $flipImages = false)
     {
         $vehicle = new \stdClass();
         $vehicle->name = $name;
         $vehicle->description = $description;
-        $vehicle->thumbnail = $this->getImageUrl($thumbnail, $name, 'public/vehicles/thumbnail');
+        $vehicle->thumbnail = $this->getImageUrl($thumbnail, $name, '/storage/vehicles/thumbnail', $flipImages);
         $vehicle->costPrice = ($salePrice - ($salePrice / 2));
         $vehicle->salePrice = $salePrice;
         $vehicle->performance = $performance;
@@ -711,7 +848,7 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         $vehicle->topSpeed = $topSpeed;
         $vehicle->acc = $acc;
         $vehicle->bhp = $bhp;
-        $vehicle->images = $this->getImagesUrls($images, $name, 'public/vehicles/gallery');
+        $vehicle->images = $this->getImagesUrls($images, $name, '/storage/vehicles/gallery', $flipImages);
 
         $this->vehiclesRaw[] = $vehicle;
     }
@@ -729,7 +866,7 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
                 'safety' => $vehicle->safety,
                 'handling' => $vehicle->handling,
                 'top_speed' => $vehicle->topSpeed,
-                '0_62' => $vehicle->acc,
+                'zero_sixty' => $vehicle->acc,
                 'bhp' => $vehicle->bhp,
                 'images' => json_encode($vehicle->images),
                 'created_at' => now(),
@@ -740,7 +877,7 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         }
     }
 
-    protected function getImageUrl($url, $name, $after)
+    protected function getImageUrl($url, $name, $after, $flipImage = false)
     {
 
         $info = pathinfo($url);
@@ -748,22 +885,41 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         $imageName = str_slug($name, '-') . '.' .$info['extension'];
         $file = '/tmp/' . $name . '.' . $info['extension'];
         file_put_contents($file, $contents);
+
+
+
+        if($flipImage === true){
+            $this->flipImage($file);
+        }
+
+
         $uploaded_file = new UploadedFile($file, $imageName);
         //dd($uploaded_file);
         Storage::putFileAs($after, $uploaded_file, $imageName, true);
         return $after . '/' . $imageName;
     }
 
-    protected function getImagesUrls($images, $name, $after)
+    protected function getImagesUrls($images, $name, $after, $flipImages)
     {
         $parsedImages = [];
         $index = 0;
         if($images!==null) {
             foreach ($images as $image) {
-                $parsedImages[] = $this->getImageUrl($image, $name . '-' .$index, $after);
+                $parsedImages[] = $this->getImageUrl($image, $name . '-' .$index, $after, $flipImages);
                 $index++;
             }
         }
         return $parsedImages;
+    }
+
+    protected function flipImage($imagePath)
+    {
+        //dd($imagePath);
+        $imagick = new \Imagick($imagePath);
+
+        $imagick->flopImage();
+
+        file_put_contents($imagePath, $imagick->getImageBlob());
+        return true;
     }
 }

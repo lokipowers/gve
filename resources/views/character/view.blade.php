@@ -32,7 +32,7 @@
                             <a href="#pablo" class="btn btn-rose btn-round">Follow</a>
                         </div>
                         <div class="card-footer">
-                            {{ $character->currency->symbol }} {{ $character->currency->converted }}
+                            {{ $character->currency->symbol }} {{ number_format($character->currency->converted, 2, '.', ',') }}
                         </div>
                     </div>
 

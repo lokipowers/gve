@@ -14,7 +14,7 @@ class AddMoneyToCharacterTable extends Migration
     public function up()
     {
         Schema::table('characters', function (Blueprint $table) {
-            $table->decimal('dollars', 5, 2);
+            $table->decimal('dollars', 65, 2);
             $table->integer('gve_coin');
         });
     }

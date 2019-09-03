@@ -15,18 +15,12 @@ class CreateEquipmentTable extends Migration
     {
         Schema::create('equipment', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 255);
-            $table->text('description')->nullable();
-            $table->string('side', 100);
+            $table->integer('equipment_id');
             $table->string('type', 100);
-            $table->integer('parent_id')->nullable();
-            $table->integer('thumbnail_id')->nullable();
-            $table->integer('attack')->default(0);
-            $table->integer('defence')->default(0);
+            $table->decimal('cost_dollars', 65, 4)->default(0);
             $table->integer('cost_coin')->default(0);
-            $table->integer('cost_diamond')->default(0);
-            $table->integer('cost_coin_sale')->default(0);
-            $table->integer('cost_diamond_sale')->default(0);
+            $table->decimal('cost_dollars_sale', 65, 4)->nullable();
+            $table->integer('cost_coin_sale')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
