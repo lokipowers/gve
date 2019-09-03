@@ -26,6 +26,10 @@ class CreateVehiclesTable extends Migration
             $table->integer('top_speed')->default(0);
             $table->decimal('zero_sixty', 3,1)->default(0);
             $table->integer('bhp')->default(1);
+            $table->integer('height');
+            $table->integer('width');
+            $table->integer('length');
+            $table->integer('weight');
             $table->json('images')->nullable();
             $table->softDeletes();
             $table->timestamps();

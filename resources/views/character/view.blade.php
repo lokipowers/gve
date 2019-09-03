@@ -50,9 +50,25 @@
                 <div class="col-sm-4">
                     @include('partials.cards.open', ['title' => 'Equipment'])
 
-                    @if(empty($character->equipment->items))
+                    @forelse($character->equipment as $equipment)
+                        @php
+                            $type = strtolower($equipment->type);
+                        @endphp
+                        <div class="media mt-2">
+                            <img style="width:80px;" src="{{ $equipment->item->$type->thumbnail }}" class="align-self-start mr-3" alt="{{ $equipment->item->$type->name }} thumbnail">
+                            <div class="media-body">
+                                <h5 class="mt-0 mb-0">
+                                    {{ $equipment->item->$type->name }}
+                                </h5>
+                                @if($equipment->arrival_time > now())
+                                    <span class="badge badge-pill badge-danger">In Transit: ETA {{ \Carbon\Carbon::parse($equipment->arrival_time)->diffForHumans() }}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                    @empty
                         <div class="text-center">{{ $character->name }} has no equipment</div>
-                    @endif
+                    @endforelse
 
                     @include('partials.cards.close')
                 </div>

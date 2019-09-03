@@ -16,6 +16,7 @@ class CreateEquipmentTable extends Migration
         Schema::create('equipment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('equipment_id');
+            $table->integer('character_id');
             $table->string('type', 100);
             $table->decimal('cost_dollars', 65, 4)->default(0);
             $table->integer('cost_coin')->default(0);

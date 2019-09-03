@@ -29,6 +29,9 @@ class VehiclesTableSeeder extends Seeder
 
     protected function vehicles()
     {
+        // All dimensions are in mm.
+        // All weights are in kg
+
         // Audi
         $this->generateVehicle(
             'Audi A1 Sportback',
@@ -41,12 +44,17 @@ class VehiclesTableSeeder extends Seeder
             137,
             7.5,
             147,
+            1409,
+            1740,
+            4029,
+            1260,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a1/A1_1.jpg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a1/A1_2.jpg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a1/Hero_desktop.jpg'
             ]
         );
+
         $this->generateVehicle(
             'Audi S3 Cabriolet',
             '-door performance cabriolet with automatic acoustic hood, distinctive ‘S’ styling, and Fine Nappa leather seats.',
@@ -58,6 +66,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             4.6,
             300,
+            1409,
+            1793,
+            4423,
+            1635,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_1.jpg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_2.jpg',
@@ -74,6 +86,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             4.6,
             300,
+            1397,
+            1802,
+            4479,
+            1535,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_Hero_desktop.jpg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_2.jpg',
@@ -91,6 +107,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             4.6,
             300,
+            1411,
+            1800,
+            4335,
+            1530,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/A3/Seats/RS3_Sportback_seats.jpeg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/Campaign-Pages/sbs/eos/a3/A3_1.jpg'
@@ -108,6 +128,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.7,
             347,
+            1369,
+            1854,
+            4640,
+            1750,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_headlights.jpg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_seats.jpg',
@@ -125,6 +149,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.7,
             347,
+            1434,
+            1842,
+            4725,
+            1620,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_headlights.jpg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/MY20/A4/S4-Saloon/S4-Saloon/s4saloon_seats.jpg',
@@ -142,6 +170,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.1,
             354,
+            1383,
+            1846,
+            4673,
+            1760,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/A5/Headlights/a5-coupe-sport-headlights-19.jpeg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/A5/Seats/Front-Sport-seats.jpeg'
@@ -158,7 +190,10 @@ class VehiclesTableSeeder extends Seeder
             174,
             3.9,
             354,
-            null
+            1360,
+            1861,
+            4723,
+            1685
         );
         $this->generateVehicle(
             'Audi RS 5 Sportback',
@@ -171,7 +206,10 @@ class VehiclesTableSeeder extends Seeder
             174,
             3.9,
             354,
-            null
+            1386,
+            1843,
+            4733,
+            1720
         );
         $this->generateVehicle(
             'Audi S6 Saloon',
@@ -184,7 +222,10 @@ class VehiclesTableSeeder extends Seeder
             255,
             5.0,
             349,
-            null
+            1435,
+            1803,
+            4892,
+            1730
         );
         $this->generateVehicle(
             'Audi S7 Sportback',
@@ -197,7 +238,10 @@ class VehiclesTableSeeder extends Seeder
             255,
             5.0,
             349,
-            null
+            1422,
+            1908,
+            4969,
+            2010
         );
         $this->generateVehicle(
             'Audi SQ5',
@@ -210,7 +254,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             5.1,
             313,
-            null
+            1635,
+            1893,
+            4671,
+            2055
         );
         $this->generateVehicle(
             'Audi Q8',
@@ -223,6 +270,10 @@ class VehiclesTableSeeder extends Seeder
             144,
             6.3,
             286,
+            1708,
+            1995,
+            4986,
+            2365,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/Q8/Headlights/Q8-Sline-Headlights.jpeg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/MY20/Q8/s-line/q8-sline-seats.jpeg',
@@ -240,7 +291,10 @@ class VehiclesTableSeeder extends Seeder
             174,
             3.7,
             395,
-            null
+            1343,
+            1832,
+            4201,
+            1450
         );
         $this->generateVehicle(
             'Audi TT RS Roadster',
@@ -253,7 +307,10 @@ class VehiclesTableSeeder extends Seeder
             155,
             3.9,
             395,
-            null
+            1343,
+            1832,
+            4201,
+            1510
         );
 
         $this->generateVehicle(
@@ -267,6 +324,10 @@ class VehiclesTableSeeder extends Seeder
             205,
             3.2,
             610,
+            1240,
+            1940,
+            4426,
+            1555,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Headlights/r8_v10_quattro-headlights.jpeg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Seats/r8_v10_quattro-seats.jpeg',
@@ -284,6 +345,10 @@ class VehiclesTableSeeder extends Seeder
             200,
             3.2,
             620,
+            1240,
+            1940,
+            4426,
+            1695,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Headlights/r8_v10_quattro-headlights.jpeg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/Web-Tablet/R8/Seats/r8_v10_quattro-seats.jpeg',
@@ -301,6 +366,10 @@ class VehiclesTableSeeder extends Seeder
             124,
             5.7,
             402,
+            1629,
+            1935,
+            4901,
+            2560,
             [
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/e-tron/Desktop/e-tron-headlight.jpeg',
                 'https://www.audi.co.uk/content/dam/audiadaptive/trim-features/e-tron/Desktop/e-tron-seats.jpeg',
@@ -321,6 +390,10 @@ The power of the 640 CV V10 engine vibrates into a roar, and the supersport exha
             202,
             2.9,
             629,
+            1180,
+            1933,
+            4520,
+            1542,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/evo-slider/int_right.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/evo-slider/design-left.jpg',
@@ -338,6 +411,10 @@ The power of the 640 CV V10 engine vibrates into a roar, and the supersport exha
             202,
             2.9,
             629,
+            1180,
+            1933,
+            4520,
+            1542,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/Evo/restyle/upgrade/overview-right.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/Evo/restyle/upgrade/design-right.jpg',
@@ -355,6 +432,10 @@ The power of the 640 CV V10 engine vibrates into a roar, and the supersport exha
             201,
             3.1,
             629,
+            1180,
+            1924,
+            4506,
+            1507,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante-spyder/overview-right.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante-spyder/intern2.jpg',
@@ -372,6 +453,10 @@ The power of the 640 CV V10 engine vibrates into a roar, and the supersport exha
             201,
             2.9,
             629,
+            1165,
+            1924,
+            4506,
+            1382,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/huracan/huracan-performante/intern2-huracan-performante.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/configuratore%20nuovo/huracan-performante-configuratore.jpg',
@@ -389,6 +474,10 @@ Produced in just 800 units, it is the most iconic model of the Aventador family,
             217,
             2.9,
             758,
+            1136,
+            2098,
+            4943,
+            1575,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj-roadster/header.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/PAGINA%20MODELLO_DEF/compressed/freni-avendator-svj-3.jpg',
@@ -409,6 +498,10 @@ Aventador SVJ. Real emotions shape the future.',
             217,
             2.9,
             758,
+            1136,
+            2098,
+            4943,
+            1575,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/Restyling/Lamborghini_Aventador_SVJ_Green_Track_09.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-svj/Restyling/design-left.jpg',
@@ -427,6 +520,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             217,
             2.9,
             758,
+            1136,
+            2098,
+            4943,
+            1575,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s-roadster/04_12_Restyling/header.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s-roadster/04_12_Restyling/intern2.jpg',
@@ -444,6 +541,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             217,
             2.9,
             758,
+            1136,
+            2098,
+            4943,
+            1575,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s/Restyling/overview-right.jpg',
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/aventador/aventador-s/Restyling/design-right.jpg',
@@ -461,6 +562,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             217,
             2.7,
             758,
+            1143,
+            2062,
+            4924,
+            1520,
             [
                 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/model/one-off/centenario/bg-huracan-right-skew.jpg'
             ]
@@ -480,6 +585,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             177,
             4.9,
             345,
+            1295,
+            1801,
+            4379,
+            1355,
             [
                 'https://files1.porsche.com/filestore/image/multimedia/none/jdp-2016-982-718-c7s-editorial-xl/normal/0d934731-4ddc-11e8-bbc5-0019999cd470;sF;twebp/porsche-normal.jpg',
                 'https://files1.porsche.com/filestore/image/multimedia/none/jdp-2016-982-718-c7s-editorial-l/normal/28f2e623-6d97-11e9-80c4-005056bbdc38;sJ;twebp/porsche-normal.jpg',
@@ -497,6 +606,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             180,
             4.9,
             359,
+            1272,
+            1801,
+            4379,
+            1450,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/982-718-gts-gallery-04/zoom2/38e33008-6da1-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/982-718-gts-gallery-01/zoom2/7d4a5027-f782-11e7-bbc5-0019999cd470;sN;twebp/porsche-zoom2.jpg',
@@ -514,6 +627,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             188,
             4.4,
             414,
+            1269,
+            1994,
+            4456,
+            1495,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/modelseries-718gt4-interior-01/zoom2/cc9d4c28-878d-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/modelseries-718gt4-indoor-01/zoom2/9ea29246-879a-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
@@ -531,6 +648,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             190,
             3.6,
             443,
+            1298,
+            1852,
+            4499,
+            1490,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/en/modelseries-911carrera992-interieur-12/zoom2/68d27c9a-a6fc-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/model-series-911carrera992-indoor-10/zoom2/eea87d8f-a6f8-11e9-80c4-005056bbdc38;sQ;twebp/porsche-zoom2.jpg',
@@ -548,6 +669,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             188,
             3.8,
             443,
+            1299,
+            1852,
+            4519,
+            1710,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/modelseries-911carrera992-indoor-08/zoom2/a748dda6-e75c-11e8-bec8-0019999cd470;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/modelseries-911carrera992-interior-02/zoom2/e1346331-e75c-11e8-bec8-0019999cd470;sQ;twebp/porsche-zoom2.jpg',
@@ -565,6 +690,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             188,
             3.8,
             443,
+            1250,
+            1852,
+            4562,
+            1615,
             [
                 'https://files1.porsche.com/filestore/wallpaper/multimedia/none/modelseries-911speedster-wallpaper-02/wallpaper/ba012bac-36a7-11e9-80c4-005056bbdc38;sO;twebp;l63692803798;w1920;h1080/porsche-wallpaper.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/modelseries-911speedster-interior-01/zoom2/c7115f91-39cc-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
@@ -582,6 +711,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             193,
             3.2,
             512,
+            1297,
+            1880,
+            2453,
+            1445,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/991-2nd-gt3rs-gallery-outdoor-01/zoom2/9e03218a-fc65-11e7-bbc5-0019999cd470;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/991-2nd-gt3rs-gallery-interior-04/zoom2/5a70c0a5-fc65-11e7-bbc5-0019999cd470;sQ;twebp/porsche-zoom2.jpg',
@@ -599,6 +732,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             179,
             4.5,
             433,
+            1428,
+            1937,
+            5199,
+            2055,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/970-g2-4s-st-gallery-outdoor-01/zoom2/0c98b233-562c-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/970-g2-tu-gallery-interior-02/zoom2/86a25c0e-fd4a-11e8-8373-0019999cd470;sN;twebp/porsche-zoom2.jpg',
@@ -616,6 +753,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             179,
             4.1,
             453,
+            1422,
+            1937,
+            5053,
+            2100,
             [
                 'https://files1.porsche.com/filestore/image/multimedia/none/970-g2-gts-st-editorial-xl/normal/03cf722e-b1ce-11e8-8f14-0019999cd470;sF;twebp/porsche-normal.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/modelseries-panamera-gts-st-gallery-exterior-10/zoom2/13b5e363-bb46-11e8-8f14-0019999cd470;sN;twebp/porsche-zoom2.jpg',
@@ -633,6 +774,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             192,
             3.5,
             670,
+            1432,
+            1937,
+            5199,
+            2485,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/970-g2-tus-e-hy-st-gallery-exterior-03/zoom2/d3a7fec2-17cc-11e9-ae19-0019999cd470;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/970-g2-4hy-gallery-interior-01/zoom2/7123fcf3-24de-11e7-9f74-0019999cd470;sQ;twebp/porsche-zoom2.jpg',
@@ -650,6 +795,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             167,
             4.3,
             433,
+            1624,
+            2098,
+            4684,
+            1925,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/pa-r4-modelseries-gallery-outdoor-02/zoom2/2013fd91-f7c7-11e8-8373-0019999cd470;sQ;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/pa-r4-model-series-gallery-image-05/zoom2/0f5846de-867d-11e8-8d30-0019999cd470;sQ;twebp/porsche-zoom2.jpg',
@@ -667,6 +816,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             183,
             3.8,
             670,
+            1573,
+            1983,
+            4926,
+            2565,
             [
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/model-series-e3-cayenne-coupe-turbo-s-e-hybrid-gallery-image-01/zoom2/01236b4f-b84f-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
                 'https://files1.porsche.com/filestore/galleryimagerwd/multimedia/none/model-series-e3-cayenne-coupe-gallery-image-23/zoom2/5fe6936f-35e6-11e9-80c4-005056bbdc38;sN;twebp/porsche-zoom2.jpg',
@@ -706,6 +859,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             101,
             14.4,
             60,
+            1504,
+            1645,
+            3600,
+            940,
             [
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/up-pa/gallery/Upfullsize8.jpg',
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/up-pa/gallery/Upfullsize2.jpg',
@@ -723,7 +880,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             148,
             6.7,
             197,
-            null
+            1461,
+            1751,
+            4067,
+            1355
         );
         $this->generateVehicle(
             'Volkswagen T-Roc R-Line',
@@ -736,7 +896,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             134,
             7.2,
             187,
-            null
+            1573,
+            1819,
+            4234,
+            1505
         );
         $this->generateVehicle(
             'Volkswagen Golf GTI TCR',
@@ -749,7 +912,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             155,
             5.6,
             286,
-            null
+            1492,
+            1790,
+            4258,
+            1430
         );
         $this->generateVehicle(
             'Volkswagen Tiguan R-Line Tech',
@@ -762,7 +928,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             143,
             6.2,
             237,
-            null
+            1673,
+            1859,
+            4490,
+            2360
         );
         $this->generateVehicle(
             'Volkswagen Passat Saloon R-Line',
@@ -775,6 +944,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             153,
             6.4,
             237,
+            1456,
+            1832,
+            4767,
+            1367,
             [
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/passat-saloon/passat-saloon-gallery-1.jpg',
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/passat-saloon/passat-saloon-gallery-4.jpg',
@@ -792,6 +965,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             130,
             9.3,
             148,
+            1659,
+            1829,
+            4527,
+            1454,
             [
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/touran-nf/gallery/1d.jpg',
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/touran-nf/gallery/2c.jpg',
@@ -809,6 +986,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             155,
             5.6,
             268,
+            1450,
+            1871,
+            4862,
+            1565,
             [
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/arteon/gallery_full_1.jpg',
                 'https://www.volkswagen.co.uk/assets/common/content/mlp/arteon/gallery_full_7.jpg',
@@ -826,6 +1007,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
             155,
             5.9,
             335,
+            1709,
+            2208,
+            4801,
+            2110,
             [
                 'https://www.volkswagen.co.uk/assets/content/new-cars/touareg-gallery-recrop.jpg',
                 'https://www.volkswagen.co.uk/assets/content/new-cars/touareg-imageneww.jpg',
@@ -834,7 +1019,7 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         );
     }
 
-    protected function generateVehicle($name, $description, $thumbnail, $salePrice, $performance, $safety, $handling, $topSpeed, $acc, $bhp, $images, $flipImages = false)
+    protected function generateVehicle($name, $description, $thumbnail, $salePrice, $performance, $safety, $handling, $topSpeed, $acc, $bhp, $height, $width, $length, $weight, $images = null, $flipImages = false)
     {
         $vehicle = new \stdClass();
         $vehicle->name = $name;
@@ -848,6 +1033,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         $vehicle->topSpeed = $topSpeed;
         $vehicle->acc = $acc;
         $vehicle->bhp = $bhp;
+        $vehicle->height = $height;
+        $vehicle->width = $width;
+        $vehicle->length = $length;
+        $vehicle->weight = $weight;
         $vehicle->images = $this->getImagesUrls($images, $name, '/storage/vehicles/gallery', $flipImages);
 
         $this->vehiclesRaw[] = $vehicle;
@@ -869,6 +1058,10 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
                 'zero_sixty' => $vehicle->acc,
                 'bhp' => $vehicle->bhp,
                 'images' => json_encode($vehicle->images),
+                'height' => $vehicle->height,
+                'width' => $vehicle->width,
+                'length' => $vehicle->length,
+                'weight' => $vehicle->weight,
                 'created_at' => now(),
                 'updated_at' => now()
             ];

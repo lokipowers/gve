@@ -18,7 +18,7 @@
             <span class="badge badge-pill badge-{{ $item->status }}">{{ $item->name }}</span>
         </div>
         <div class="timeline-body">
-            <p>{{ $item->content }}</p>
+            <p>{!! $item->content !!}</p>
         </div>
         <h6>
             <i class="ti-time"></i> {{ $item->created_at->diffForHumans() }}
