@@ -10,7 +10,14 @@ use App\Http\Controllers\Controller;
 class BaseController extends Controller
 {
 
-    protected $currentUser;
+    public $currentUser;
+
+    protected $perPage = 10;
+
+    public function __construct()
+    {
+        $this->currentUser = Auth::user();
+    }
 
     public function getUser()
     {

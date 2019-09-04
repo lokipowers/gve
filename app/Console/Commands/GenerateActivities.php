@@ -11,14 +11,14 @@ class GenerateActivities extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'gve:generateActivities';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '...?';
 
     /**
      * Create a new command instance.
@@ -37,6 +37,10 @@ class GenerateActivities extends Command
      */
     public function handle()
     {
-        //
+        $this->line('Refreshing Activities Table');
+        \Artisan::call('migrate:refresh --path=/database/migrations/2019_08_21_071929_create_activities_table.php');
+        $this->line('Seeding Activities Table');
+        \Artisan::call('db:seed --class=ActivitiesTableSeeder');
+        $this->info('Done');
     }
 }

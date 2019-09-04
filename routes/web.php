@@ -81,8 +81,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Activities
     Route::get('activities', "ActivityController@index")->name('activities.index');
-    Route::get('activities/{slug}', "ActivityController@view")->name('activities.view');
-    Route::post('activities/{slug}', "ActivityController@start")->name('activities.start');
+    Route::get('activities/{id}', "ActivityController@doActivity")->name('activities.do');
 
     // Properties
     Route::get('properties', "PropertyController@index")->name('properties.index');
@@ -102,6 +101,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('notifications/{id}', "Notifications@view")->name('notifications.view');
     Route::post('notifications/{id}/read', "Notifications@markRead")->name('notifications.read');
 
+
+    // Puzzles
+    Route::get('puzzles/wordsearch', "PuzzleController@wordSearch")->name('puzzle.wordsearch');
 
 });
 

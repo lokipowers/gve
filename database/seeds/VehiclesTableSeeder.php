@@ -12,8 +12,6 @@ class VehiclesTableSeeder extends Seeder
 
     protected $vehiclesParsed;
 
-    protected $vehicles;
-
     /**
      * Run the database seeds.
      *
