@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'character.create', 'titlePage' => __('Word Search')])
+@extends('layouts.app', ['activePage' => 'puzzles', 'titlePage' => __('Word Search')])
 
 @section('content')
     <div class="content">

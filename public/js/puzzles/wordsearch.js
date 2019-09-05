@@ -745,7 +745,7 @@
                 beforeSend: function(request) {
                     request.setRequestHeader("Authorization", "Bearer " + token);
                 },
-                url: "/api/puzzle/wordsearch",
+                url: "/api/puzzle/complete",
                 data: JSON.stringify({
                     unique_id:gvePuzzleId
                 }),

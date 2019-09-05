@@ -104,7 +104,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Puzzles
     //Route::get('puzzles/wordsearch', "PuzzleController@wordSearch")->name('puzzle.wordsearch');
-    Route::get('puzzles/wordsearch/{difficulty}', "Puzzles\\WordSearchController@wordSearch")->name('puzzle.wordsearch.difficulty');
+    Route::get('puzzles/word-search/{difficulty}', "Puzzles\\WordSearchController@wordSearch")->name('puzzle.wordsearch.difficulty');
+    Route::get('puzzles/cross-button/{difficulty}', "Puzzles\\CrossButtonController@puzzle")->name('puzzle.crossbutton.difficulty');
+    Route::get('puzzles/slide-image/{difficulty}', "Puzzles\\ImageDragController@puzzle")->name('puzzle.slideimage.difficulty');
 
 });
 

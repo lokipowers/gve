@@ -32,4 +32,25 @@ class PuzzleController extends BaseController
 
     }
 
+    public function completePuzzle(Request $request)
+    {
+
+        $puzzle = PuzzleLog::where([
+            ['unique_id', $request->unique_id],
+            ['is_complete', 0]
+        ])->firstOrFail();
+
+        $puzzle->is_complete = 1;
+        $puzzle->save();
+
+        $character = Character::where('id', $this->getUser()->character->id)->first();
+        $character->dollars += $puzzle->reward_dollars;
+        $character->save();
+
+        return response()->json([
+            'message' => 'Smashed it!',
+            'earnings' => $puzzle->reward_dollars
+        ]);
+    }
+
 }
