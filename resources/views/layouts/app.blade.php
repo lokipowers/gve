@@ -20,7 +20,9 @@
     @if (config('app.env') === 'production')
         @laravelPWA
     @endif
-    <script>var token = '{{ $currentUser->createToken('gveworld')->accessToken }}';</script>
+    @isset($currentUser)
+        <script>var token = '{{ $currentUser->createToken('gveworld')->accessToken }}';</script>
+    @endisset
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()

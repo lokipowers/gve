@@ -103,7 +103,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     // Puzzles
-    Route::get('puzzles/wordsearch', "PuzzleController@wordSearch")->name('puzzle.wordsearch');
+    //Route::get('puzzles/wordsearch', "PuzzleController@wordSearch")->name('puzzle.wordsearch');
+    Route::get('puzzles/wordsearch/{difficulty}', "Puzzles\\WordSearchController@wordSearch")->name('puzzle.wordsearch.difficulty');
 
 });
 
