@@ -307,7 +307,7 @@ md = {
     }
   },
 
-  initDashboardPageCharts: function() {
+    initDashboardPageCharts: function() {
 
     if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
       /* ----------==========     Daily Sales Chart initialization    ==========---------- */
