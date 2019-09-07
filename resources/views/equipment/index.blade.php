@@ -18,14 +18,22 @@
                                     <thead class="text-primary">
                                     <th>Thumbnail</th>
                                     <th>Name</th>
-                                    <th>Description</th>
                                     <th>Type</th>
+                                    <th>Attack</th>
+                                    <th>Defence</th>
                                     <th>Cost</th>
+                                    <th>P&P</th>
+                                    <th>ETA</th>
                                     </thead>
                                     <tbody>
                                     @foreach($equipment as $item)
                                         @php
                                             $type = strtolower($item->type);
+                                            $affordable = 'success';
+
+                                            if($currentUser->character->currency->converted < ($item->cost_price->converted + $item->localShippingCost)){
+                                                $affordable = 'danger';
+                                            }
                                         @endphp
                                         <tr>
                                             <td>
@@ -38,9 +46,20 @@
                                             <td>
                                                 <a href="{{ route('equipment.purchase', ['id' => $item->id, 'type' => $type]) }}" style="white-space: nowrap;">{{ $item->$type->name }}</a>
                                             </td>
-                                            <td>{{ nl2br($item->$type->description) }}</td>
                                             <td>{{ ucwords($type) }}</td>
-                                            <td style="white-space: nowrap;">{{ $item->cost_price->symbol }} {{ number_format($item->cost_price->converted, 2, '.', ',') }}</td>
+                                            <td>{{ $item->$type->attack }}</td>
+                                            <td>{{ $item->$type->defence }}</td>
+                                            <td class="text-{{ $affordable }}" style="white-space: nowrap;">
+                                                <strong>{{ $item->cost_price->symbol }} {{ number_format($item->cost_price->converted, 2, '.', ',') }}</strong>
+                                            </td>
+                                            <td class="text-{{ $affordable }}" style="white-space: nowrap;">
+                                                <strong>{{ $item->cost_price->symbol }} {{ number_format($item->localShippingCost, 2, '.', ',') }}</strong>
+                                            </td>
+                                            <td>
+                                                <i style="font-size:1.2em; vertical-align: sub;" class="material-icons">access_time</i>
+                                                {{ $item->localShippingDuration }}
+                                                @if($item->localShippingDuration !== 'Instant') mins @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

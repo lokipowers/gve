@@ -30,6 +30,8 @@ class CreateVehiclesTable extends Migration
             $table->integer('width');
             $table->integer('length');
             $table->integer('weight');
+            $table->integer('attack')->default(0);
+            $table->integer('defence')->default(0);
             $table->json('images')->nullable();
             $table->softDeletes();
             $table->timestamps();

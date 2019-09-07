@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Broadcast\CharacterNotification;
 use App\PuzzleLog;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -65,17 +66,17 @@ class DashboardController extends BaseController
 
             if($puzzle->is_complete === 1){
                 $puzzles[$puzzle->name]->completed++;
+                $puzzles[$puzzle->name]->reward_dollars += $puzzle->reward_dollars;
             }
 
-            $puzzles[$puzzle->name]->attempted = $attempted;
             $puzzles[$puzzle->name]->$difficulty++;
             $puzzles[$puzzle->name]->total_played++;
-            $puzzles[$puzzle->name]->reward_dollars += $puzzle->reward_dollars;
             $puzzles[$puzzle->name]->last_played = $puzzle->updated_at;
 
 
         }
 
+        //dd($puzzles);
         return $puzzles;
     }
 }

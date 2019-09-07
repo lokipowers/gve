@@ -12,6 +12,6 @@
 */
 
 
-Broadcast::channel('App.UserController.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+Broadcast::channel('Character.Notification.{id}', function ($user, $id) {
+    return (int) $user->character->id === (int) $id;
 });

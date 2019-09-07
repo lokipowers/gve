@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Character;
 use App\CharacterEquipment;
 use App\Equipment;
+use App\Http\Broadcast\CharacterNotification;
 use App\Http\Controllers\Traits\CharacterActivity;
 use App\Http\Controllers\Traits\CurrencyConverter;
 use App\Http\Controllers\Traits\ShippingCalculator;
@@ -86,7 +87,12 @@ class EquipmentController extends BaseController
         $creator->dollars = bcadd($creator->dollars, $equipment->cost_dollars);
         $creator->save();
 
-        $this->logCharacterActivity($this->getUser()->id, $character->id, 'info', ucwords($type) . ' Purchased', 'You bought a nice new ' . $equipment->$type->name .' <img src="' . $equipment->$type->thumbnail . '" style="margin-top:10px;max-width:100%;height:auto" />', 'shopping_basket');
+        $notificationIcon = 'shopping_basket';
+        $notificationContent = 'You bought a nice new ' . $equipment->$type->name .' <img src="' . $equipment->$type->thumbnail . '" style="margin-top:10px;max-width:100%;height:auto" />';
+
+        $this->logCharacterActivity($this->getUser()->id, $character->id, 'info', ucwords($type) . ' Purchased', $notificationContent, $notificationIcon);
+
+        //event( new CharacterNotification($character->id, $notificationIcon, $notificationContent));
 
         return redirect()->back()->with('success', [$equipment->$type->name . ' has been purchased.']);
 

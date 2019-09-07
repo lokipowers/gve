@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Http\File;
 
 class VehiclesTableSeeder extends Seeder
 {
@@ -1015,14 +1016,38 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
                 'https://www.volkswagen.co.uk/assets/content/new-cars/touareg-new-img.jpg'
             ]
         );
+
+        $this->generateVehicle(
+            'Challenger',
+            '',
+            'https://dev.gve.world/images/vehicles/Challenger-2.png',
+            5180394.74,
+            2,
+            5.0,
+            3.8,
+            37,
+            0,
+            1200,
+            25000,
+            35000,
+            115000,
+            62500,
+            [
+                'https://dev.gve.world/images/vehicles/45158851.jpg',
+                'https://dev.gve.world/images/vehicles/_AJW4020-2.jpg'
+            ],
+            100,
+            100,
+            true
+        );
     }
 
-    protected function generateVehicle($name, $description, $thumbnail, $salePrice, $performance, $safety, $handling, $topSpeed, $acc, $bhp, $height, $width, $length, $weight, $images = null, $flipImages = false)
+    protected function generateVehicle($name, $description, $thumbnail, $salePrice, $performance, $safety, $handling, $topSpeed, $acc, $bhp, $height, $width, $length, $weight, $images = null, $attack = 0, $defence = 0, $flipThumbnail = false, $flipImages = false)
     {
         $vehicle = new \stdClass();
         $vehicle->name = $name;
         $vehicle->description = $description;
-        $vehicle->thumbnail = $this->getImageUrl($thumbnail, $name, '/storage/vehicles/thumbnail', $flipImages);
+        $vehicle->thumbnail = $this->getImageUrl($thumbnail, $name, '/vehicles/thumbnail', $flipThumbnail);
         $vehicle->costPrice = ($salePrice - ($salePrice / 2));
         $vehicle->salePrice = $salePrice;
         $vehicle->performance = $performance;
@@ -1035,7 +1060,9 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         $vehicle->width = $width;
         $vehicle->length = $length;
         $vehicle->weight = $weight;
-        $vehicle->images = $this->getImagesUrls($images, $name, '/storage/vehicles/gallery', $flipImages);
+        $vehicle->attack = $attack;
+        $vehicle->defence = $defence;
+        $vehicle->images = $this->getImagesUrls($images, $name, '/vehicles/gallery', $flipImages);
 
         $this->vehiclesRaw[] = $vehicle;
     }
@@ -1060,6 +1087,8 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
                 'width' => $vehicle->width,
                 'length' => $vehicle->length,
                 'weight' => $vehicle->weight,
+                'attack' => $vehicle->attack,
+                'defence' => $vehicle->defence,
                 'created_at' => now(),
                 'updated_at' => now()
             ];
@@ -1078,16 +1107,20 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
         file_put_contents($file, $contents);
 
 
+        //dd($contents);
 
         if($flipImage === true){
-            $this->flipImage($file);
+            $contents = $this->flipImage($file);
         }
 
 
-        $uploaded_file = new UploadedFile($file, $imageName);
+        //$uploaded_file = new UploadedFile($file, $imageName);
+
         //dd($uploaded_file);
-        Storage::putFileAs($after, $uploaded_file, $imageName, true);
-        return $after . '/' . $imageName;
+        //Storage::putFileAs($after, new File($file), $imageName, true);
+        Storage::put($after . '/' . $imageName, $contents);
+        //dd($storageFile);
+        return '/storage' . $after . '/' . $imageName;
     }
 
     protected function getImagesUrls($images, $name, $after, $flipImages)
@@ -1110,7 +1143,7 @@ The new V12 engine with a whopping 740 HP and the exclusiveness of Lamborghini d
 
         $imagick->flopImage();
 
-        file_put_contents($imagePath, $imagick->getImageBlob());
-        return true;
+        //file_put_contents($imagePath, $imagick->getImageBlob());
+        return $imagick->getImageBlob();
     }
 }
