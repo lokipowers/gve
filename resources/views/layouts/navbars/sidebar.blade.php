@@ -38,6 +38,18 @@
                     ]
                 ]
             ],
+            'Properties' => [
+                'route' => null,
+                'icon' => 'apartment',
+                'id' => 'properties',
+                'children' => [
+                    'View All' => [
+                        'route' => 'properties.index',
+                        'icon' => 'apartment',
+                        'id' => 'propertiesIndex'
+                    ]
+                ]
+            ],
             'Puzzles' => [
                 'route' => null,
                 'icon' => 'filter_b_and_w',

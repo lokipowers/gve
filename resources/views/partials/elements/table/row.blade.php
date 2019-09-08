@@ -2,8 +2,30 @@
     @foreach($headers as $header => $data)
         <td>
 
+            @isset($data['nobr'])
+                <nobr>
+            @endisset
+
             @isset($data['route'])
-                <a href="{{ route($data['route'], ['id' => $item->id]) }}">
+                @php
+                    $routeParams = ['id' => $item->id];
+                    if(isset($data['routeParams'])){
+                        $routeParams = [];
+                        foreach($data['routeParams'] as $name => $param){
+                            $routeParams[$name] = strtolower($item->$param);
+                        }
+                    }
+                @endphp
+
+                <a href="{{ route($data['route'], $routeParams) }}">
+            @endisset
+
+            @isset($data['prepend'])
+                {{ $data['prepend'] }}
+            @endisset
+
+            @isset($data['icon_before'])
+                <i style="font-size:1.2em; vertical-align: sub;" class="material-icons">{{ $data['icon_before'] }}</i>
             @endisset
 
             @foreach($data['item'] as $dataItems)
@@ -15,6 +37,13 @@
                     $hunter = $item;
                     $needle = null;
                     foreach($dataItem as $itemList){
+
+                        if(strpos($itemList, '{{') !== false){
+                            $find = str_replace('{{', '', str_replace('}}', '', $itemList));
+                            $itemList = strtolower($item->$find);
+                        }
+
+
                         if(isset($hunter->$itemList)){
                             $hunter = $hunter->$itemList;
                         }else{
@@ -23,12 +52,28 @@
                         }
                     }
 
-                    echo ucwords(strtolower($hunter));
+                    if(isset($data['type']) && $data['type'] == 'image'){
+                        $imageSrc = $hunter->getFirstMediaUrl($data['image']);
+                        echo '<img src="'. $imageSrc .'" alt="'. $hunter->name .' '. $data['image'] .'" style="width:300px; max-width: 100%;align-self:center;">';
+                    }else{
+                        echo ucwords(strtolower($hunter));
+                    }
 
                 @endphp
             @endforeach
+
+            @isset($data['icon_after'])
+                <i style="font-size:1.2em; vertical-align: sub;" class="material-icons">{{ $data['icon_after'] }}</i>
+            @endisset
+
+            @isset($data['append'])
+                {{ $data['append'] }}
+            @endisset
             @isset($data['route'])
                 </a>
+            @endisset
+            @isset($data['nobr'])
+                </nobr>
             @endisset
         </td>
     @endforeach

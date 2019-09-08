@@ -7,3 +7,7 @@
 @endforeach
 </tbody>
 @include('partials.elements.table.close')
+
+<div class="float-right">
+{{ $items->links() }}
+</div>
