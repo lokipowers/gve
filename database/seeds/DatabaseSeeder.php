@@ -1,6 +1,6 @@
 <?php
 
-use App\Properties;
+use App\Property;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

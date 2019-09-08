@@ -28,18 +28,23 @@
                                     <tbody>
                                     @foreach($equipment as $item)
                                         @php
+
+
+
                                             $type = strtolower($item->type);
                                             $affordable = 'success';
 
                                             if($currentUser->character->currency->converted < ($item->cost_price->converted + $item->localShippingCost)){
                                                 $affordable = 'danger';
                                             }
+
+                                            $thumbnailImage = $item->$type->getFirstMedia('thumbnail')->getFullUrl();
                                         @endphp
                                         <tr>
                                             <td>
                                                 <div class="avatar avatar-md" style="width:250px; height:150px;overflow: hidden;">
                                                     <a href="{{ route('equipment.purchase', ['id' => $item->id, 'type' => $type]) }}" style="display:flex;height:100%;">
-                                                        <img src="{{ $item->$type->thumbnail }}" alt="{{ $item->$type->name }} Thumbnail" style="max-width: 100%;align-self:center;">
+                                                        <img src="{{ $thumbnailImage }}" alt="{{ $item->$type->name }} Thumbnail" style="max-width: 100%;align-self:center;">
                                                     </a>
                                                 </div>
                                             </td>

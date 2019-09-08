@@ -55,7 +55,7 @@
                             $type = strtolower($equipment->type);
                         @endphp
                         <div class="media mt-2">
-                            <img style="width:80px;" src="{{ $equipment->item->$type->thumbnail }}" class="align-self-start mr-3" alt="{{ $equipment->item->$type->name }} thumbnail">
+                            <img style="width:80px;" src="{{ $equipment->item->$type->getFirstMediaUrl('thumbnail') }}" class="align-self-start mr-3" alt="{{ $equipment->item->$type->name }} thumbnail">
                             <div class="media-body">
                                 <h5 class="mt-0 mb-0">
                                     {{ $equipment->item->$type->name }}

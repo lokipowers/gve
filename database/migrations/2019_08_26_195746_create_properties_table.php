@@ -20,7 +20,9 @@ class CreatePropertiesTable extends Migration
             $table->text('description');
             $table->integer('owner_id')->nullable();
             $table->string('type', 255);
-            $table->string('icon', 255)->nullable();
+            $table->integer('base_salary')->default(0);
+            $table->integer('salary_multiplier')->default(1);
+            $table->integer('defence')->default(100);
             $table->json('meta')->nullable();
             $table->integer('location_id');
             $table->softDeletes();

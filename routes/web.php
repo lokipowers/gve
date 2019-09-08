@@ -85,8 +85,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Properties
     Route::get('properties', "PropertyController@index")->name('properties.index');
-    Route::get('properties/{slug}', "PropertyController@view")->name('properties.view');
-    Route::post('properties/{slug}/buy')->name('properties.purchase');
+    Route::get('properties/{id}', "PropertyController@view")->name('properties.view');
+    Route::get('properties/{id}/edit', "PropertyController@edit")->name('properties.edit');
+    Route::get('properties/{id}/claim', "PropertyController@claim")->name('properties.claim');
+    Route::get('properties/{id}/attack', "PropertyController@attack")->name('properties.attack');
 
 
     // Messages

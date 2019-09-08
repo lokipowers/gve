@@ -39,7 +39,7 @@
                 </div>
                 <div class="card card-profile">
                     <div style="margin:-70px auto -30px;">
-                            <img class="img" src="{{ $vehicle->vehicle->thumbnail }}" style="max-width:480px;">
+                            <img class="img" src="{{ $vehicle->vehicle->getFirstMediaUrl('thumbnail') }}" style="max-width:480px;">
                     </div>
                     <div class="card-body">
                         <div class="container">
@@ -90,11 +90,11 @@
                             </form>
                         @endif
 
-                        @if($vehicle->vehicle->images !== null)
+                        @if($vehicle->vehicle->getMedia('gallery') !== null)
                             <div class="container mt-3">
                                 <div class="row">
-                                @foreach(json_decode($vehicle->vehicle->images) as $image)
-                                    <div class="col" style="background-image:url({{ $image }}); background-size:cover;height:300px;"></div>
+                                @foreach($vehicle->vehicle->getMedia('gallery') as $image)
+                                    <div class="col" style="background-image:url({{ $image->getFullUrl() }}); background-size:cover;height:300px;"></div>
                                 @endforeach
                                 </div>
                             </div>

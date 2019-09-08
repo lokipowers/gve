@@ -46,35 +46,40 @@ class PropertiesTableSeeder extends Seeder
             'BAD',
             '',
             'SAFEHOUSE',
-            $locationId
+            $locationId,
+            100
         );
         $this->generateProperty(
             'Brothel',
             'BAD',
             '',
             'BROTHEL',
-            $locationId
+            $locationId,
+            200
         );
         $this->generateProperty(
             'Restaurant',
             'BAD',
             '',
             'RESTAURANT',
-            $locationId
+            $locationId,
+            300
         );
         $this->generateProperty(
             'Morgue',
             'BAD',
             '',
             'MORGUE',
-            $locationId
+            $locationId,
+            100
         );
         $this->generateProperty(
             'Courier',
             'BAD',
             '',
             'COURIER',
-            $locationId
+            $locationId,
+            100
         );
 
         /* Good Properties */
@@ -83,35 +88,40 @@ class PropertiesTableSeeder extends Seeder
             'GOOD',
             '',
             'BARRACKS',
-            $locationId
+            $locationId,
+            100
         );
         $this->generateProperty(
             'Mess Hall',
             'GOOD',
             '',
             'MESS_HALL',
-            $locationId
+            $locationId,
+            200
         );
         $this->generateProperty(
             'Firing Range',
             'GOOD',
             '',
             'FIRING_RANGE',
-            $locationId
+            $locationId,
+            100
         );
         $this->generateProperty(
             'Assault Course',
             'GOOD',
             '',
             'ASSAULT_RANGE',
-            $locationId
+            $locationId,
+            200
         );
         $this->generateProperty(
             'Holding Cell',
             'GOOD',
             '',
             'HOLDING_CELL',
-            $locationId
+            $locationId,
+            300
         );
 
         /* Middle Properties */
@@ -120,42 +130,48 @@ class PropertiesTableSeeder extends Seeder
             'MIDDLE',
             '',
             'LAUNDERETTE',
-            $locationId
+            $locationId,
+            100
         );
         $this->generateProperty(
             'Weapon Factory',
             'MIDDLE',
             '',
             'WEAPON_FACTORY',
-            $locationId
+            $locationId,
+            200
         );
         $this->generateProperty(
             'Armour Factory',
             'MIDDLE',
             '',
             'ARMOUR_FACTORY',
-            $locationId
+            $locationId,
+            200
         );
         $this->generateProperty(
             'Vehicle Factory',
             'MIDDLE',
             '',
             'VEHICLE_FACTORY',
-            $locationId
+            $locationId,
+            100
         );
         $this->generateProperty(
             'Drug Factory',
             'MIDDLE',
             '',
             'DRUG_FACTORY',
-            $locationId
+            $locationId,
+            300
         );
         $this->generateProperty(
             'Hospital',
             'MIDDLE',
             '',
             'HOSPITAL',
-            $locationId
+            $locationId,
+            200
         );
     }
 
@@ -167,7 +183,7 @@ class PropertiesTableSeeder extends Seeder
     }
 
 
-    protected function generateProperty($name, $side, $description, $type, $locationId)
+    protected function generateProperty($name, $side, $description, $type, $locationId, $salary)
     {
         $property = new \stdClass();
         $property->name = $name;
@@ -175,8 +191,8 @@ class PropertiesTableSeeder extends Seeder
         $property->description = $description;
         $property->owner_id = null;
         $property->type = $type;
-        $property->icon = null;
         $property->meta = null;
+        $property->salary = $salary;
         $property->location_id = $locationId;
 
         $this->propertiesRaw[] = $property;
@@ -191,9 +207,10 @@ class PropertiesTableSeeder extends Seeder
                 'side' => $property->side,
                 'owner_id' => $property->owner_id,
                 'type' => $property->type,
-                'icon' => $property->icon,
                 'meta' => $property->meta,
                 'location_id' => $property->location_id,
+                'base_salary' => $property->salary,
+                'defence' => 100,
                 'deleted_at' => null,
                 'created_at' => now(),
                 'updated_at' => now()
