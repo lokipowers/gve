@@ -76,7 +76,7 @@
         "x-editable": "^1.5.1"
     },
     "devDependencies": {
-        "axios": "^0.18",
+        "axios": "^0.21",
         "bootstrap": "^4.1.0",
         "browser-sync": "^2.26.3",
         "compass-mixins": "^0.12.10",
